@@ -1,0 +1,16 @@
+name: Sancar Adali
+author: Herring Cove
+markdown: redcarpet
+pygments: false
+baseurl: 
+description: 
+github: http://www.github.com/adalisan
+twitter: http://www.twitter.com/
+facebook: http://www.facebook.com
+linkedin: http://www.linkedin.com
+email: sadali[at]gmail.com
+location: 42°2'16"N   70°12'47"W
+disqus: diqus-username
+
+##Make sure to edit the above fields, especially for disqus.
+
