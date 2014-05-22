@@ -88,7 +88,19 @@ layout: default
 			<!-- #BeginEditable "sidebar" -->
 			<!-- #EndEditable --></div>
 		<!-- End Right Column -->
-		
+		<!-- Begin Footer -->
+		<div id="footer">
+			<div id="copyright">
+				<p>Copyright © 2013. All Rights Reserved.</p>
+			</div>
+			<p><a href="../default.html">Home</a> | 
+			<a href="../about_me/default.html">About 
+			Me</a> | <a href="default.html">Résumé</a> |
+			<a href="../research/default.html">Research</a> |
+			<a href="../links/default.html">Links</a> |
+			
+		</div>
+		<!-- End Footer --></div>
 	<!-- End content_container --></div>
 
 </html>
