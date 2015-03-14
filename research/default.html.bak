@@ -33,9 +33,9 @@ layout: projects
 			<p>My dissertation is on using data from disparate sources in
 			dissimilarity representation to do joint statistical inference.
 			<a href="http://www.cis.jhu.edu/~zma/zmisi09.html">Here</a> is a
-			good introduction by Zhiliang Ma, a previous Ph.D student of  my
+			good introduction by Zhiliang Ma, a previous Ph.D student and my
 			advisor.</p>
-			<p>This <a href="http://arxiv.org/abs/1112.5510">paper</a> by Zhiliang Ma lays the
+			<p>This <a href="http://arxiv.org/abs/1112.5510">paper</a> lays the
 			foundation for my dissertation work.</p>
 			<br />
 
@@ -97,7 +97,6 @@ layout: projects
 				<p class="meta"><small>&nbsp;<i class="fa fa-calendar-o"></i> 2009-2014</small></p><hr/>
 				<div class="post">
 				My PhD thesis was on joint embedding of disparate dissimilarities for solving various inference tasks such as transfer learning, match detection and graph matching. I have dealt with various issues such as robustness to noise and compared with alternative approaches such as Canonical Correlational Analysis.
-				<a href="https://github.com/adalisan/JOFC-GraphMatch">Github repo </A>
 
 				</div>
 			</div>
