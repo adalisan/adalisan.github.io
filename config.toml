@@ -26,8 +26,8 @@ defaultContentLanguageInSubdir = false
   avatar = "self.png"
   email = "sadali[at]googlesmail.com"
   address = "Cambridge,MA 02138, USA"
-  phone = "888 888 88 88"
-  skype = "echo123"
+  phone = ""
+  skype = ""
   telegram = ""
 
   # Enable Keybase in Contact section by entering your keybase.io username.
