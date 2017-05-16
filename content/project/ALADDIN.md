@@ -6,8 +6,7 @@ date = "2017-05-15"
 title = "ALADDIN"
 
 # Project summary to display on homepage.
-summary = "ALADDIN : Automated Lowlevel analysis of videos
-"
+summary = "ALADDIN : Automated Lowlevel analysis of videos"
 
 # Optional image to display on homepage (relative to `static/img/` folder).
 image_preview = "bubbles.jpg"
