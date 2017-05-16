@@ -5,7 +5,7 @@ abstract = ""
 abstract_short = ""
 event = "Hugo Academic Theme Conference"
 event_url = "https://example.org"
-location = "London, United Kingdom"
+location = ""
 
 selected = false
 math = true
