@@ -2,7 +2,7 @@ name: Sancar Adali
 author: Herring Cove
 markdown: redcarpet
 pygments: false
-baseurl: 
+baseurl: http://adalisan.github.io/academic/
 description: 
 github: http://www.github.com/adalisan
 twitter: http://www.twitter.com/adalisan
