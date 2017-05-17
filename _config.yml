@@ -14,3 +14,5 @@ disqus:
 
 ##Make sure to edit the above fields, especially for disqus.
 
+
+theme: jekyll-theme-slate
