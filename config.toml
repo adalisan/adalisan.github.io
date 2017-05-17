@@ -1,4 +1,4 @@
-baseurl = "https://adalisan.github.io/academic/"
+baseurl = "https://adalisan.github.io/public/"
 title = "Sancar Adali - personal website"
 copyright = "&copy; 2016 Sancar Adali"
 theme = "academic"
