@@ -1,4 +1,4 @@
-baseurl = "https://adalisan.github.io/migrate_to_hugo_academic/"
+baseurl = "https://adalisan.github.io/academic/"
 title = "Sancar Adali - personal website"
 copyright = "&copy; 2016 Sancar Adali"
 theme = "academic"
