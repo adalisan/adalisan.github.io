@@ -2,60 +2,78 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Projects on Sancar Adali - personal website</title>
-    <link>https://adalisan.github.io/academic/project/</link>
+    <link>https://adalisan.github.io/project/</link>
     <description>Recent content in Projects on Sancar Adali - personal website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Sancar Adali</copyright>
     <lastBuildDate>Mon, 15 May 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/academic/project/" rel="self" type="application/rss+xml" />
+    <atom:link href="/project/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>ALADDIN</title>
-      <link>https://adalisan.github.io/academic/project/aladdin/</link>
+      <link>https://adalisan.github.io/project/aladdin/</link>
       <pubDate>Mon, 15 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://adalisan.github.io/academic/project/aladdin/</guid>
+      <guid>https://adalisan.github.io/project/aladdin/</guid>
       <description>&lt;p&gt;Software Development &amp;amp; Research for interactive system that carries out training and search for events in videos.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>CVRG</title>
-      <link>https://adalisan.github.io/academic/project/cvrg/</link>
+      <link>https://adalisan.github.io/project/cvrg/</link>
       <pubDate>Mon, 15 May 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://adalisan.github.io/academic/project/cvrg/</guid>
+      <guid>https://adalisan.github.io/project/cvrg/</guid>
       <description>&lt;p&gt;I was a researcher in the machine learning group for the Cardiovascular Research Grid project. We worked with the cardiologists who are custodians of a dataset involving patients with ICD implants. Our objective was to come up with robust, interpretable predictors that predicted either high risk of ICD utilization , or sudden cardiac death. An important challenge was to create predictors that both utilized both survival data and did not become biased due to not-missing-at-random data.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Data Fusion from Disparate Dissimilarities and Joint Optimization of Fidelity and Commensurability</title>
-      <link>https://adalisan.github.io/academic/project/jofc/</link>
+      <link>https://adalisan.github.io/project/jofc/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://adalisan.github.io/academic/project/jofc/</guid>
+      <guid>https://adalisan.github.io/project/jofc/</guid>
       <description>&lt;p&gt;My PhD thesis was on joint embedding of disparate dissimilarities for solving various inference tasks such as transfer learning, match detection and graph matching. I have dealt with various issues such as robustness to noise and compared with alternative approaches such as Canonical Correlational Analysis.
 &lt;a href=&#34;https://github.com/adalisan/JOFC-GraphMatch&#34; target=&#34;_blank&#34;&gt;Github repo&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>External Project</title>
-      <link>https://adalisan.github.io/academic/project/example-external-project/</link>
+      <title>Deep Learning</title>
+      <link>https://adalisan.github.io/project/deep-learning/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://adalisan.github.io/academic/project/example-external-project/</guid>
+      <guid>https://adalisan.github.io/project/deep-learning/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
+
+&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
+
+&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
+
+&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
+
+&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>External Project</title>
+      <link>https://adalisan.github.io/project/example-external-project/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/project/example-external-project/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Seeded Graph Matching</title>
-      <link>https://adalisan.github.io/academic/project/sgm/</link>
+      <link>https://adalisan.github.io/project/sgm/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://adalisan.github.io/academic/project/sgm/</guid>
+      <guid>https://adalisan.github.io/project/sgm/</guid>
       <description>&lt;p&gt;This variant of the graph matching problem provides an opportunity for the application of JOFC and also the adaptation of a state-of-the-art graph matching algorithm.
 My work on this variant of the graph matching problem constituted part of my dissertation research. This work is presented in &lt;a href=&#34;http://arxiv.org/abs/1209.0367&#34; target=&#34;_blank&#34;&gt;this&lt;/a&gt; and &lt;a href=&#34;http://arxiv.org/abs/1401.3813http://arxiv.org/abs/1401.3813&#34; target=&#34;_blank&#34;&gt;this&lt;/a&gt; arxiv papers.&lt;/p&gt;
 
@@ -66,10 +84,10 @@ My work on this variant of the graph matching problem constituted part of my dis
     
     <item>
       <title>XDATA</title>
-      <link>https://adalisan.github.io/academic/project/xdata/</link>
+      <link>https://adalisan.github.io/project/xdata/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://adalisan.github.io/academic/project/xdata/</guid>
+      <guid>https://adalisan.github.io/project/xdata/</guid>
       <description>
 
 &lt;h4 id=&#34;darpa-program-for-organizing-big-data-analysis-and-visualization-efforts&#34;&gt;DARPA program for organizing big data analysis and visualization efforts.&lt;/h4&gt;
