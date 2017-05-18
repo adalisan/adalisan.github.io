@@ -185,15 +185,6 @@
     
     <url>
     
-      <loc>https://adalisan.github.io/publication/person-re-identification/</loc>
-      <lastmod>2015-09-01T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
       <loc>https://adalisan.github.io/publication/manmatch-jofc/</loc>
       <lastmod>2015-09-01T00:00:00+00:00</lastmod>
     </url>
@@ -221,8 +212,9 @@
     
     <url>
     
-      <loc>https://adalisan.github.io/publication/clothing-search/</loc>
-      <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+      <loc>https://adalisan.github.io/publication_types/0/</loc>
+      <lastmod>2016-11-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
     </url>
     
   
@@ -241,7 +233,17 @@
     <url>
     
       <loc>https://adalisan.github.io/publication_types/2/</loc>
-      <lastmod>2015-09-01T00:00:00+00:00</lastmod>
+      <lastmod>2016-11-10T00:00:00+00:00</lastmod>
+      <priority>0</priority>
+    </url>
+    
+  
+    
+    
+    <url>
+    
+      <loc>https://adalisan.github.io/publication_types/3/</loc>
+      <lastmod>2016-11-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
