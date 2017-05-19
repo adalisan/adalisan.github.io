@@ -31,16 +31,6 @@
     </item>
     
     <item>
-      <title>Example Talk</title>
-      <link>https://adalisan.github.io/talk/example-talk/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://adalisan.github.io/talk/example-talk/</guid>
-      <description>&lt;p&gt;Embed your slides or video here using &lt;a href=&#34;https://gcushen.github.io/hugo-academic-demo/post/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;shortcodes&lt;/a&gt;. Further details can easily be added using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Fidelity-Commensurability Tradeoff in Joint Embedding of Disparate Dissimilarities</title>
       <link>https://adalisan.github.io/publication/fidcommjofc/</link>
       <pubDate>Thu, 10 Nov 2016 00:00:00 +0000</pubDate>
@@ -496,6 +486,26 @@ Here&#39;s some important information...
       <guid>https://adalisan.github.io/2014/08/12/first-post/</guid>
       <description>&lt;p&gt;I am in the process of creating my new personal website. I wanted to make it simple and based on a simple  design with the option to generate pages without messing with HTML. That is why I am using Herring Cove. This &lt;strong&gt;may&lt;/strong&gt;
 be overkill for a personal website.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Joint Optimization of Fidelity and Commensurability for Manifold Alignment and Vertex Assignment</title>
+      <link>https://adalisan.github.io/talk/worldcongprobstat/</link>
+      <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/talk/worldcongprobstat/</guid>
+      <description>&lt;p&gt;Embed your slides or video here using &lt;a href=&#34;https://gcushen.github.io/hugo-academic-demo/post/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;shortcodes&lt;/a&gt;. Further details can easily be added using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Joint Optimization of Fidelity and Commensurability for Manifold Alignment and Vertex Assignment</title>
+      <link>https://adalisan.github.io/talk/jsm2012/</link>
+      <pubDate>Mon, 01 Aug 2011 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/talk/jsm2012/</guid>
+      <description>&lt;p&gt;Embed your slides or video here using &lt;a href=&#34;https://gcushen.github.io/hugo-academic-demo/post/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;shortcodes&lt;/a&gt;. Further details can easily be added using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
     </item>
     
