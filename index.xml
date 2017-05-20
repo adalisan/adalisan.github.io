@@ -31,16 +31,6 @@
     </item>
     
     <item>
-      <title>Fidelity-Commensurability Tradeoff in Joint Embedding of Disparate Dissimilarities</title>
-      <link>https://adalisan.github.io/publication/fidcommjofc/</link>
-      <pubDate>Thu, 10 Nov 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://adalisan.github.io/publication/fidcommjofc/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Joint Optimization of Fidelity and Commensurability for Manifold Alignment and Graph Matching</title>
       <link>https://adalisan.github.io/publication/thesis/</link>
       <pubDate>Thu, 10 Nov 2016 00:00:00 +0000</pubDate>
@@ -56,8 +46,7 @@
       <pubDate>Thu, 10 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>https://adalisan.github.io/publication/sgm/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <description></description>
     </item>
     
     <item>
@@ -66,8 +55,7 @@
       <pubDate>Thu, 10 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>https://adalisan.github.io/publication/sgmviajofc/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <description></description>
     </item>
     
     <item>
@@ -113,6 +101,18 @@ My work on this variant of the graph matching problem constituted part of my dis
       <description>
 
 &lt;h4 id=&#34;darpa-program-for-organizing-big-data-analysis-and-visualization-efforts&#34;&gt;DARPA program for organizing big data analysis and visualization efforts.&lt;/h4&gt;
+
+&lt;p&gt;The different data analysis tasks we accomplished are &lt;a href=&#34;http://www.cis.jhu.edu/~parky/XDATA/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Migration</title>
+      <link>https://adalisan.github.io/post/migrating-to-hugo/</link>
+      <pubDate>Wed, 20 Apr 2016 10:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/post/migrating-to-hugo/</guid>
+      <description>&lt;p&gt;I have decided to switch to the academic theme for hugo , as it makes much more sense for a researcher. Now I just need to collect all the things I have done over the years.&lt;/p&gt;
 </description>
     </item>
     
@@ -474,16 +474,15 @@ Here&#39;s some important information...
       <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
       
       <guid>https://adalisan.github.io/publication/manmatch-jofc/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <description></description>
     </item>
     
     <item>
       <title>First post</title>
-      <link>https://adalisan.github.io/2014/08/12/first-post/</link>
+      <link>https://adalisan.github.io/post/2014-08-12-first-post/</link>
       <pubDate>Tue, 12 Aug 2014 19:55:16 +0000</pubDate>
       
-      <guid>https://adalisan.github.io/2014/08/12/first-post/</guid>
+      <guid>https://adalisan.github.io/post/2014-08-12-first-post/</guid>
       <description>&lt;p&gt;I am in the process of creating my new personal website. I wanted to make it simple and based on a simple  design with the option to generate pages without messing with HTML. That is why I am using Herring Cove. This &lt;strong&gt;may&lt;/strong&gt;
 be overkill for a personal website.&lt;/p&gt;
 </description>
