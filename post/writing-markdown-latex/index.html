@@ -417,7 +417,7 @@ print(&quot;You entered: {}&quot;.format(input_string_var))
 
 <p>If the <code>highlight_languages</code> option is set, then the corresponding javascript files will be served from the <a href="https://cdnjs.com/libraries/highlight.js/" target="_blank">cdnjs server</a>. To see a list of available languages, visit the <a href="https://cdnjs.com/libraries/highlight.js/" target="_blank">cdnjs page</a> and search for links with the word &ldquo;languages&rdquo;.</p>
 
-<p>The <code>highlight_languages</code> option provides an easy and convenient way to include support for additional languages to be severed from a CDN. If serving unmodified files from cdnjs doesn&rsquo;t meet your needs, you can include javascript files for additional language support via one of the methods described in the <a href="" target="_blank">getting started guide</a>.</p>
+<p>The <code>highlight_languages</code> option provides an easy and convenient way to include support for additional languages to be severed from a CDN. If serving unmodified files from cdnjs doesn&rsquo;t meet your needs, you can include javascript files for additional language support via one of the methods described in the getting started guide.</p>
 
 <h4 id="option-highlight-style">Option <code>highlight_style</code></h4>
 
@@ -429,17 +429,12 @@ print(&quot;You entered: {}&quot;.format(input_string_var))
 
 <p>See the <a href="https://highlightjs.org/static/demo/" target="_blank">highlight.js demo page</a> for examples of available styles.</p>
 
-<div class="alert alert-note">
-  <p>Not all styles listed on the <a href="https://highlightjs.org/static/demo/" target="_blank">highlight.js demo page</a> are available from the <a href="https://cdnjs.com/libraries/highlight.js/" target="_blank">cdnjs server</a>. If you want to use a style that is not served by cdnjs, just leave <code>highlight_style</code> unset, and place the corresponding css file in <code>/static/css/highlight.min.css</code>.</p>
+<p>Missing alert
+Not all styles listed on the <a href="https://highlightjs.org/static/demo/" target="_blank">highlight.js demo page</a> are available from the <a href="https://cdnjs.com/libraries/highlight.js/" target="_blank">cdnjs server</a>. If you want to use a style that is not served by cdnjs, just leave <code>highlight_style</code> unset, and place the corresponding css file in <code>/static/css/highlight.min.css</code>.
+Missing <strong>alert</strong></p>
 
-</div>
-
-
-<div class="alert alert-note">
-  <p>If you don&rsquo;t want to change the default style that ships with Academic but you do want the style file served from the <a href="https://cdnjs.com/libraries/highlight.js/" target="_blank">cdnjs server</a>, set <code>highlight_style = &quot;github&quot;</code> in <code>config.toml</code>.</p>
-
-</div>
-
+<p>If you don&rsquo;t want to change the default style that ships with Academic but you do want the style file served from the <a href="https://cdnjs.com/libraries/highlight.js/" target="_blank">cdnjs server</a>, set <code>highlight_style = &quot;github&quot;</code> in <code>config.toml</code>.
+Missing <strong>alertend</strong></p>
 
 <p>The <code>highlight_style</code> option is only recognized when set in <code>config.toml</code>. Setting <code>highlight_style</code> in your page&rsquo;s preamble has no effect.</p>
 
@@ -523,33 +518,14 @@ print(&quot;You entered: {}&quot;.format(input_string_var))
 
 <h2 id="alerts">Alerts</h2>
 
-<p>Alerts are a useful feature that add side content such as tips, notes, or warnings to your articles. They are especially handy when writing educational tutorial-style articles. Use the corresponding shortcodes to enable alerts inside your content:</p>
-
-<pre><code>{{% alert note %}}
-Here's a tip or note...
-{{% /alert %}}
-</code></pre>
+<p>Alerts are a useful feature that add side content such as tips, notes, or warnings to your articles. They are especially handy when writing educational tutorial-style articles. Use the corresponding shortcodes to enable alerts inside your content.
+Missing <em>alert</em> templates:</p>
 
 <p>This will display the following <em>note</em> block:</p>
 
-<div class="alert alert-note">
-  <p>Here&rsquo;s a tip or note&hellip;</p>
-
-</div>
-
-
-<pre><code>{{% alert warning %}}
-Here's some important information...
-{{% /alert %}}
-</code></pre>
-
 <p>This will display the following <em>warning</em> block:</p>
 
-<div class="alert alert-warning">
-  <p>Here&rsquo;s some important information&hellip;</p>
-
-</div>
-
+<p>Here&rsquo;s some important information&hellip;</p>
 <div class="footnotes">
 
 <hr />
@@ -568,10 +544,13 @@ Here's some important information...
   <nav>
   <ul class="pager">
     
-    <li class="previous"><a href="https://adalisan.github.io/2014/08/12/first-post/"><span
+    <li class="previous"><a href="https://adalisan.github.io/post/2014-08-12-first-post/"><span
       aria-hidden="true">&larr;</span> First post</a></li>
     
 
+    
+    <li class="next"><a href="https://adalisan.github.io/post/migrating-to-hugo/">Migration <span
+      aria-hidden="true">&rarr;</span></a></li>
     
   </ul>
 </nav>
