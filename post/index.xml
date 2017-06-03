@@ -11,6 +11,16 @@
     <atom:link href="/post/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Migration</title>
+      <link>https://adalisan.github.io/post/migrating-to-hugo/</link>
+      <pubDate>Wed, 20 Apr 2016 10:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/post/migrating-to-hugo/</guid>
+      <description>&lt;p&gt;I have decided to switch to the academic theme for hugo , as it makes much more sense for a researcher. Now I just need to collect all the things I have done over the years.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Writing content with Markdown, LaTeX, and Shortcodes</title>
       <link>https://adalisan.github.io/post/writing-markdown-latex/</link>
       <pubDate>Wed, 20 Apr 2016 10:00:00 +0000</pubDate>
@@ -218,7 +228,7 @@ print(&amp;quot;You entered: {}&amp;quot;.format(input_string_var))
 
 &lt;p&gt;If the &lt;code&gt;highlight_languages&lt;/code&gt; option is set, then the corresponding javascript files will be served from the &lt;a href=&#34;https://cdnjs.com/libraries/highlight.js/&#34; target=&#34;_blank&#34;&gt;cdnjs server&lt;/a&gt;. To see a list of available languages, visit the &lt;a href=&#34;https://cdnjs.com/libraries/highlight.js/&#34; target=&#34;_blank&#34;&gt;cdnjs page&lt;/a&gt; and search for links with the word &amp;ldquo;languages&amp;rdquo;.&lt;/p&gt;
 
-&lt;p&gt;The &lt;code&gt;highlight_languages&lt;/code&gt; option provides an easy and convenient way to include support for additional languages to be severed from a CDN. If serving unmodified files from cdnjs doesn&amp;rsquo;t meet your needs, you can include javascript files for additional language support via one of the methods described in the &lt;a href=&#34;&#34; target=&#34;_blank&#34;&gt;getting started guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;highlight_languages&lt;/code&gt; option provides an easy and convenient way to include support for additional languages to be severed from a CDN. If serving unmodified files from cdnjs doesn&amp;rsquo;t meet your needs, you can include javascript files for additional language support via one of the methods described in the getting started guide.&lt;/p&gt;
 
 &lt;h4 id=&#34;option-highlight-style&#34;&gt;Option &lt;code&gt;highlight_style&lt;/code&gt;&lt;/h4&gt;
 
@@ -230,17 +240,12 @@ print(&amp;quot;You entered: {}&amp;quot;.format(input_string_var))
 
 &lt;p&gt;See the &lt;a href=&#34;https://highlightjs.org/static/demo/&#34; target=&#34;_blank&#34;&gt;highlight.js demo page&lt;/a&gt; for examples of available styles.&lt;/p&gt;
 
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;p&gt;Not all styles listed on the &lt;a href=&#34;https://highlightjs.org/static/demo/&#34; target=&#34;_blank&#34;&gt;highlight.js demo page&lt;/a&gt; are available from the &lt;a href=&#34;https://cdnjs.com/libraries/highlight.js/&#34; target=&#34;_blank&#34;&gt;cdnjs server&lt;/a&gt;. If you want to use a style that is not served by cdnjs, just leave &lt;code&gt;highlight_style&lt;/code&gt; unset, and place the corresponding css file in &lt;code&gt;/static/css/highlight.min.css&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Missing alert
+Not all styles listed on the &lt;a href=&#34;https://highlightjs.org/static/demo/&#34; target=&#34;_blank&#34;&gt;highlight.js demo page&lt;/a&gt; are available from the &lt;a href=&#34;https://cdnjs.com/libraries/highlight.js/&#34; target=&#34;_blank&#34;&gt;cdnjs server&lt;/a&gt;. If you want to use a style that is not served by cdnjs, just leave &lt;code&gt;highlight_style&lt;/code&gt; unset, and place the corresponding css file in &lt;code&gt;/static/css/highlight.min.css&lt;/code&gt;.
+Missing &lt;strong&gt;alert&lt;/strong&gt;&lt;/p&gt;
 
-&lt;/div&gt;
-
-
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;p&gt;If you don&amp;rsquo;t want to change the default style that ships with Academic but you do want the style file served from the &lt;a href=&#34;https://cdnjs.com/libraries/highlight.js/&#34; target=&#34;_blank&#34;&gt;cdnjs server&lt;/a&gt;, set &lt;code&gt;highlight_style = &amp;quot;github&amp;quot;&lt;/code&gt; in &lt;code&gt;config.toml&lt;/code&gt;.&lt;/p&gt;
-
-&lt;/div&gt;
-
+&lt;p&gt;If you don&amp;rsquo;t want to change the default style that ships with Academic but you do want the style file served from the &lt;a href=&#34;https://cdnjs.com/libraries/highlight.js/&#34; target=&#34;_blank&#34;&gt;cdnjs server&lt;/a&gt;, set &lt;code&gt;highlight_style = &amp;quot;github&amp;quot;&lt;/code&gt; in &lt;code&gt;config.toml&lt;/code&gt;.
+Missing &lt;strong&gt;alertend&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;The &lt;code&gt;highlight_style&lt;/code&gt; option is only recognized when set in &lt;code&gt;config.toml&lt;/code&gt;. Setting &lt;code&gt;highlight_style&lt;/code&gt; in your page&amp;rsquo;s preamble has no effect.&lt;/p&gt;
 
@@ -324,33 +329,14 @@ print(&amp;quot;You entered: {}&amp;quot;.format(input_string_var))
 
 &lt;h2 id=&#34;alerts&#34;&gt;Alerts&lt;/h2&gt;
 
-&lt;p&gt;Alerts are a useful feature that add side content such as tips, notes, or warnings to your articles. They are especially handy when writing educational tutorial-style articles. Use the corresponding shortcodes to enable alerts inside your content:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{{% alert note %}}
-Here&#39;s a tip or note...
-{{% /alert %}}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Alerts are a useful feature that add side content such as tips, notes, or warnings to your articles. They are especially handy when writing educational tutorial-style articles. Use the corresponding shortcodes to enable alerts inside your content.
+Missing &lt;em&gt;alert&lt;/em&gt; templates:&lt;/p&gt;
 
 &lt;p&gt;This will display the following &lt;em&gt;note&lt;/em&gt; block:&lt;/p&gt;
 
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;p&gt;Here&amp;rsquo;s a tip or note&amp;hellip;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
-&lt;pre&gt;&lt;code&gt;{{% alert warning %}}
-Here&#39;s some important information...
-{{% /alert %}}
-&lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;This will display the following &lt;em&gt;warning&lt;/em&gt; block:&lt;/p&gt;
 
-&lt;div class=&#34;alert alert-warning&#34;&gt;
-  &lt;p&gt;Here&amp;rsquo;s some important information&amp;hellip;&lt;/p&gt;
-
-&lt;/div&gt;
-
+&lt;p&gt;Here&amp;rsquo;s some important information&amp;hellip;&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34;&gt;
 
 &lt;hr /&gt;
@@ -364,10 +350,10 @@ Here&#39;s some important information...
     
     <item>
       <title>First post</title>
-      <link>https://adalisan.github.io/2014/08/12/first-post/</link>
+      <link>https://adalisan.github.io/post/2014-08-12-first-post/</link>
       <pubDate>Tue, 12 Aug 2014 19:55:16 +0000</pubDate>
       
-      <guid>https://adalisan.github.io/2014/08/12/first-post/</guid>
+      <guid>https://adalisan.github.io/post/2014-08-12-first-post/</guid>
       <description>&lt;p&gt;I am in the process of creating my new personal website. I wanted to make it simple and based on a simple  design with the option to generate pages without messing with HTML. That is why I am using Herring Cove. This &lt;strong&gt;may&lt;/strong&gt;
 be overkill for a personal website.&lt;/p&gt;
 </description>
