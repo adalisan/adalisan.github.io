@@ -7,8 +7,560 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Sancar Adali</copyright>
-    <lastBuildDate>Thu, 10 Nov 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 15 May 2017 00:00:00 +0000</lastBuildDate>
     <atom:link href="/publication_types/3/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Prediction of Heart Arrythmias</title>
+      <link>https://adalisan.github.io/publication/cvrg-tech-report/</link>
+      <pubDate>Mon, 15 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/publication/cvrg-tech-report/</guid>
+      <description>
+
+&lt;h2 id=&#34;introduction-introduction-unnumbered&#34;&gt;Introduction {#introduction .unnumbered}&lt;/h2&gt;
+
+&lt;p&gt;In large studies of cardiovascular disease, there are usually multiple sources of data for subjects, including  ECG measurements, genotype information and various marker loci, measurements of proteomic biomarkers, MRI and CT images, age, gender, ethnicity, and results of additional  Clinical evaluation. Our motivation for this study was to develop statistical tools for integrating available patient data from several such modalities and scales in order to classify patients according to their risk of sudden cardiac death (SCD). In order to tailor classical machine learning tools to this problem, we have developed new methodology using data from subjects in the Reynolds project. These subjects have been implanted with defibrillators when they are considered at high risk for SCD from heart arrhythmia. Since these devices are implanted at considerable financial cost as well is inconvenience to patients, and can have a significant effect on quality of life, it is evidently desirable to determine for which patients, if any, implantation can be safely avoided. In particular, we have focused on developing predictors with high sensitivity, in the sense of identifying patients who should be implanted due to high risk of SCD, at the possible expense of specificity, in the sense of implanting patients who perhaps need not be implanted due to low risk of SCD.&lt;/p&gt;
+
+&lt;p&gt;To pin down the phenotype to be predicted, we limit the dataset to only patients who have been observed up to a certain number of days(referring to this parameter as &lt;em&gt;ndays&lt;/em&gt;). Among this population of interest, the phenotype is determined by whether the patient has survived &lt;em&gt;ndays&lt;/em&gt; after their date of implantation.&lt;/p&gt;
+
+&lt;h2 id=&#34;medical-background-medical-background-unnumbered&#34;&gt;Medical Background {#medical-background .unnumbered}&lt;/h2&gt;
+
+&lt;p&gt;Sudden cardiac death is a leading cause of death in patients with heart failure. It is generally defined as natural death due to cardiac reasons within a short time of onsetting symptoms without previous immediately fatal conditions@Zipes1998 [@Lopshire2006]. It occurs five to six times often in patients with previous heart failure than the general population. Although research on the mechanism of this event is still undergoing@Lopshire2006, it is accepted that majority of these events are caused by abnormalities of electrical activity in the heart called arrhythmias. The occurrence of these abnormalities could be due to electrochemical and/or biological. These heart arrhythmias are classified according to the period of occurrences of certain patterns in the signal (tachycardia or fibrillation) and the physical location of the abnormal electrical signal in the heart (ventricular or atrial). Ventricular tachycardia and fibrillation are the more serious conditions, compared to atrial events. Ventricular tachycardia is identified with increase in heart rate. If VT is not terminated either naturally or by a medical response, it will turn into a ventricular fibrillation(VF) which is the medical term for irregular electrochemical signals in the heart, and uncontrolled convulsions of the heart muscle. This event causes the heart to lose its blood-pumping capacity. Therefore it is life-threatening and needs to be dealt with immediately with CPR or defibrillation.&lt;/p&gt;
+
+&lt;p&gt;To respond to heart arrhythmias , implantable cardioverter-defibrillators(ICD) are implanted to patients who have suffered a myocardial infarction(heart attack). These devices either shock the heart with a powerful pulse signal, or apply a fast electrical signal synchronized to heart rhythm to bring the heart rhythm to normal patterns. It has been established @Bardy2005 that they increase survival rates for patients (The ICD-implanted group had higher survival rates with respect to control group and patients taking anti-arrhythmia drugs), although it might be necessary to do further risk stratification, since the utilization rate is low. These devices carry a financial cost as long as a psychological cost to patients.&lt;/p&gt;
+
+&lt;p&gt;It should be noted that any study of Sudden Cardiac Death begs the question of what the definition of SCD is. The question is widely discussed in medical literature and different experts disagree on which mortality events should be labeled as SCD or not0. According to AHA:&lt;/p&gt;
+
+&lt;p&gt;“Sudden cardiac death (also called sudden arrest) is death resulting from an abrupt loss of heart function (cardiac arrest). The victim may or may not have diagnosed heart disease. The time and mode of death are unexpected. It occurs within minutes after symptoms appear. “. The specifics of the question is widely discussed in medical literature @Tomaselli2004. Our work mainly considers total mortality as a surrogate for SCD. @Zipes1998 argues any noticeable symptoms a patient has during the onset as too ambiguous and considers only information from  ECGs or ventricular electrograms from ICDs as definitive. They suggest considering total mortality as the outcome in studies.&lt;/p&gt;
+
+&lt;p&gt;Our initial prediction task is to use different biomarkers and  Clinical variables to accomplish the risk quantification of life-threatening heart arrhythmias. A measure of risk as computed with the help of biomarkers would have quite large practical value, since it would help health care professional with an objective means to decide whether to implant the ICD device to a person or not.&lt;/p&gt;
+
+&lt;p&gt;Various biomarkers , including ejection fraction and inducibility in EPS@Buxton2002 testing have been shown to be associated with heart arrhythmia events, although the results from some of the biomarker studies have ambiguous results and have not survived scrutiny from repeated medical studies.&lt;/p&gt;
+
+&lt;p&gt;Ejection Fraction is a biomarker that is a measure of the heart’s blood-pumping capability. It is defined as the difference between largest and smallest volume of the left ventricle (bottom heart chamber). If this measure is too low, the heart is not contracting properly and can not pump enough blood to the body. The volume of the left ventricle can be computed from MRI images or visually estimated from ultrasound images(the former is more accurate).&lt;/p&gt;
+
+&lt;p&gt;Inducibility is the result of an inducible arrhythmia test(also called electrophysiological study or test(EPS)). This test involves a physician while monitoring the electrical activity in the heart, trying to induce an arrhythmia by drugs or electrical current. While minimally invasive, the prognostic value of this test is in question. During EPS-electrophysiologic testing, which is also called “programmed ventricular stimulation(PVS),’ different kinds of arrhythmias can be induced.&lt;/p&gt;
+
+&lt;p&gt;The possible types of induced arrhythmias:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Monomorphic Ventricular Tachycardia(MMVT)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Polymorphic Ventricular Tachycardia(PMVT)&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Ventricular Fibrillation(VF)&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Shocks from ICDs (Firing) take place, when patient’s heart rate, as detected from the leads of the device which monitor the electrical signals, passes a threshold. This might happen due to an atrial arrhythmia which is not life-threatening. In this case, the firing is labeled as inappropriate. Inappropriate firings are unnecessary utilization of the devices which cause great distress to the patients.&lt;/p&gt;
+
+&lt;p&gt;Although ventricular electrograms that shows how the arrhythmias progressed that led to (or might have led to) death might available in implanted ICDs in Reynolds study, these data need to be adjudicated to be classified into one type of arrhythmia or another. Once an arrhythmia is classified, it is possible to decide whether the ICD firing was appropriate or not. The adjudication in Reynolds study is done by the Reynolds study committee. We have this information in Reynolds dataset available for most of the patients who had ICD devices fire. Investigations for appropriate firing as the outcome did not lead to any significant results.&lt;/p&gt;
+
+&lt;h2 id=&#34;the-reynolds-dataset-the-reynolds-dataset-unnumbered&#34;&gt;The Reynolds Dataset  {#the-reynolds-dataset .unnumbered}&lt;/h2&gt;
+
+&lt;p&gt;Reynolds dataset comes from a cohort of patients from Johns Hopkins University and &amp;hellip; centers that have been implanted by ICD devices. The cohort consists of 664 patients from Johns Hopkins, 21 from QCD, 96 from UMD, 73 from VCU and 305 from WHC. Various biomarkers and  Clinical information is collected from the cohort and we utilize as much of this data as possible in our analysis. Some of the subjects do not have implantation data available (patients from centers other than JHU) and we remove these from the study.&lt;/p&gt;
+
+&lt;p&gt;The biomarkers are collected via various tests and measurements carried out in Reynolds study using various technologies: Electrocardiogram signal recordings, Single Nucleotide Polymorphism analysis, computerized analysis of Magnetic Resonance  Imaging images, quantitative analysis of blood proteins. These different modalities are referred to as  ECG,  SNP,  Imaging, PROTEIN and  Clinical(which include information such as age, gender, ethnicity and also a doctor-provided estimate of ejection fraction).&lt;/p&gt;
+
+&lt;p&gt;An important challenge of the dataset is that all of the tests have not been carried out for all of the subjects. For any subject, all features in a modality might be missing, because that subject did not undergo that particular test. In fact, nearly half of the cohort have not had MRI images collected. Limiting data analysis to subjects who have all of the modalities available would severely decrease the sample size and remove any chance of detecting a class-feature correlation in the data that is generalizable.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;FiveModalVenn&#34; alt=&#34;Venn diagram with areas proportional to subject counts having those modalities available&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For each modality, the following categorical and continous features are available:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Name    Description    Categorical or Continuous    Suggested by experts  
+-----  --------------- -------------------------    --------------------
+SNP     SNP1    rs16847548    Categorical    Yes  
+SNP     SNP2    rs4657139    Categorical    Yes  
+SNP     SNP3    rs12567209    Categorical    Yes  
+SNP     SNP4    rs12567211    Categorical      
+SNP     SNP5    rs1415262    Categorical      
+SNP     SNP6    rs10494366    Categorical    Yes  
+ECG    meanHRbpm    Mean Heart Rate (beats per minute)    Continuous      
+ECG    perckept,       Continuous      
+ECG    percPVC    Percentage ectopic in the epoch    Continuous      
+ECG    QTVI\_log    log of the QT variability Index(= log ((QTvariance/(QTmean2))/(RRvariance/RRmean2)))    Continuous    Yes  
+ECG    QTVInumer.1000    QT Variability/Mean-Squared QT    Continuous      
+ECG    QTVIdenom.1000    RR Variability/Mean-Squared RR    Continuous      
+ECG    QTV\_msecsqu    QT Variability ($milisec^{2}$)    Continuous      
+ECG    HRV\_bpmsqu    from Heart Rate Variability (HRV) spectral analysis,    Continuous      
+ECG    QTintmean\_sec    QT interval mean ($sec$)    Continuous    Yes  
+ECG    HRmean\_bpm    Heart Rate mean    Continuous      
+ECG    QTRRslope    Slope of the QT vs RR regression plot    Continuous      
+ECG    QTRRintercept    Intercept of the QT vs RR regression plot    Continuous      
+ECG    QTRR\_r2    $R^{2}$ value of the fitted QT vs RR regression plot    Continuous      
+ECG    meancoh    mean spectral coherence of QT and HR    Continuous      
+ECG    VLFPow    from HRV spectral analysis, Very Low Frequency Power,    Continuous      
+ECG    LFPow,    from HRV spectral analysis, Low Frequency Power,    Continuous      
+ECG    HFPow,    from HRV spectral analysis, High Frequency Power    Continuous      
+ECG    TotPow\_ Clinical\_use,    from HRV spectral analysis, the sum of Very Low Frequency Power, Low Frequency Power, High Frequency Power    Continuous      
+ECG    TotPow\_mathematical    Correlated with TotPow\_ Clinical\_use    Continuous      
+ECG    LFdivHFPow,    HRV Low Frequency Power divided by High Frequency Power    Continuous      
+ECG    LFdivHFplLF,    HRV Low Frequency Power divided by ( High Frequency Power + Low Frequency Power )    Continuous    Yes  
+ECG    RMSSD\_msec,    results for these standard definitions of linear HRV analysis    Continuous      
+ECG    pNN50,    standard definitions of linear HRV analysis    Continuous      
+ECG    meanNN\_msec    standard definitions of linear HRV analysis: Mean of normal RR interval in milliseconds    Continuous    Yes  
+ECG    , SDNN\_msec,    standard definitions of linear HRV analysis:Standard Deviation of normal RR interval in milliseconds    Continuous    Yes  
+ECG    total\_RRvariance\_msec,    RR Variance in milliseconds    Continuous      
+ECG    SDNN\_RST\_msec,    S.D. of Normal RR in Regional Spectral Turbulence    Continuous      
+ECG    sdRLTESQTintmsec    S.D. of QT Interval    Continuous      
+ECG    ,avgNssvthoseelim,    the average noise (normalized-epsilon)\
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;value of the bad QT beats    Continuous&lt;br /&gt;
+    ECG    avgNssthosekept    Average Noise Power for Good QT Beats    Continuous&lt;br /&gt;
+    ECG    cardiom.type    Cardiomyopathy Type: Whether Ischemic disease or not    Categorical&lt;br /&gt;
+    ECG    Inducible    Whether the subject underwent heart arrhythmia during electrophysiological test    Categorical    Yes&lt;br /&gt;
+    ECG    MMVT    Whether the subject underwent MMVT type heart arrhythmia during electrophysiological test    Categorical&lt;br /&gt;
+    Imaging    LVEDV    Left Ventricular end-diastole volume (ml) -volume of left ventricular chamber at maximum dilation phase (largest volume)    Continuous    Yes&lt;br /&gt;
+    Imaging    LVESV    Left Ventricular end-systole volume (ml) - volume of left ventricular chamber at maximum contraction phase (smallest volume)    Continuous&lt;br /&gt;
+    Imaging    LVEF    Left Ventricular Ejection Fraction $\frac{LVEDV-LVESV}{LVEDV}*100$ measured by MRI    Continuous    Yes&lt;br /&gt;
+    Imaging    LVEDMASS    left ventricle end-diastole mass - myocardial mass at end-diastole (g)    Continuous&lt;br /&gt;
+    Imaging    DEmass    mass of tissue exhibiting delayed enhancement. This is typically infarct scar or fibrotic regions.    Continuous    Yes&lt;br /&gt;
+    Clinical    EchoEF ,    Left Ventricular Ejection Fraction Measured by Ultrasound    Continuous    Yes&lt;br /&gt;
+    Clinical    Age.At.Implant ,    Age of Subject at Time of Implantation    Continuous    Yes&lt;br /&gt;
+    Clinical    Race”,    Ethnic Background, one of B,A,W,O    Categorical    Yes&lt;br /&gt;
+    Clinical    Gender    Gender    Categorical    Yes&lt;br /&gt;
+   Protein Biomarkers    HS.CRP,    High-sensitivity C-reactive protein test    Continuous    Yes&lt;br /&gt;
+   Protein Biomarkers    TNF.a.Rec.2    TNF$-\alpha$ Soluble TNF$-\alpha$ receptors 1 and 2 test    Continuous    Yes&lt;br /&gt;
+   Protein Biomarkers    HSIL.6,    High-sensitivity Soluble IL-6 receptor test    Continuous    Yes&lt;br /&gt;
+   Protein Biomarkers    Pro.BNP,    N-terminal pro b-type natriuretic peptide test    Continuous    Yes&lt;br /&gt;
+   Protein Biomarkers    Il.10 ,    Interleukin-10 test    Continuous    Yes&lt;br /&gt;
+   Protein Biomarkers    CTNT,    Cardiac troponin T test    Continuous    Yes&lt;br /&gt;
+   Protein Biomarkers    CKNB,    Creatine Kinase MB Isoenzyme test    Continuous    Yes&lt;br /&gt;
+   Protein Biomarkers    Myoglobin    Myoglobin test    Continuous    Yes&lt;br /&gt;
+   Protein Biomarkers    Tropin.I    Troponin I test    Continuous    Yes&lt;/p&gt;
+
+&lt;h2 id=&#34;previous-work-previous-work-unnumbered&#34;&gt;Previous Work {#previous-work .unnumbered}&lt;/h2&gt;
+
+&lt;p&gt;There exists many studies about risk factors and prognostic biomarkers for SCD in cardiovascular community. Previous work that shares our initial objective of discovering biomarkers to predict heart arrhythmias that ICDs will prevent include @Arking2006 [@Catanzaro2007; @Cook2009; @Fisher2005; @Greenberg2004; @Imaki2005; @Kies2004; @Klein2006]. Various studies try to study the prognostic value of electrophysiological testing(EPS)@Bhandari1989 [@Brembilla-Perrot1995; @Buxton1987; @Buxton2000; @Carrillo; @Daubert2006; @DeFerrari2007; @Denniss1986; @DiMarco2001]. It is not established whether inducibility in EPS corresponds to a higher risk of SCD or higher ICD firing rate. @Schmitt2001 report: “Due to positive results in early studies the inducibility has been incorporated into some of the ICD studies despite&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;conflicting results regarding the predictive power&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;debate over whether comparable information can be taken from a combination of noninvasive tests&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;low predictive value@Bourke1991&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;the invasive nature associated with potential morbidity.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;”&lt;/p&gt;
+
+&lt;p&gt;A relatively rarely seen condition that causes arrhythmias is Long QT syndrome (LQTS) which is a congenital or drug-induced condition @Berger2010. Deviation of QT interval is seen as possible trigger of events leading to arrhythmias.&lt;/p&gt;
+
+&lt;p&gt;Other warning signs of arrhythmias include “scalar electrical abnormalities such as microvolt T-wave alternans, increased QRS duration, and repolarization abnormalities disordered autonomic nervous system function manifested by alteration and variability in resting and exercising heart rate and baroreflex sensitivity, and the presence of occult ventricular arrhythmias”.@Lopshire2006&lt;/p&gt;
+
+&lt;p&gt;Various studies(such as MADIT@Moss1996 [@Moss2003], MUSTT(@Buxton1999),SCD-HEFT@Bardy2005) have shown ICDs increase the survival rates of at-risk populations(both when the outcome is total mortality and SCD). All these studies consider specific subpopulations that are considered high-risk(These might be populations with low LVEF, Inducibility in EPS, coronary heart disease, ischemic or nonischemic cardiomyopathy). Such risk stratification is almost standard in medical studies. It is possible that there are interactions between biomarkers or  Clinical variables that determine the prognostic effectiveness of the biomarkers. For example, each feature might be separately not associated with the phenotype, but using them in conjunction might result in a good predictor of phenotype. Population stratification will make the interaction between such variables visible. Our choice of classifier, decision trees, will also discover such interaction between prognostic variables.&lt;/p&gt;
+
+&lt;p&gt;It is the opinion of @Lopshire2006 :&lt;/p&gt;
+
+&lt;p&gt;“It is clear from these and other studies that better understanding of the contribution of molecular and genetic/proteomic influences on the risk for developing, or for not developing, ventricular tachyarrhythmias, as well as understanding the mechanisms responsible for the onset and maintenance of arrhythmias in a variety of animal models, including human beings, is essential to both identify individuals at risk and to develop specific therapies to mitigate that risk. However, the future holds great promise, with advances in  Imaging capabilities and genetics, pharmacotherapy, and device technology, all playing increasing roles.”&lt;/p&gt;
+
+&lt;p&gt;What motivated our investigations was to combine these different information from these modalities to have a risk quantification toolbox that provides simple, interpretable results for cardiovascular researchers. It is our hope that the methodology and software tools we have developed will start an effort to treat the biomarker and  Clinical information as features from different modalities and possibly interacting predictors of risk.&lt;/p&gt;
+
+&lt;p&gt;The distinction between significance in association tests and good performance as a predictor is described in@Ware2006. This is one of our arguments machine learning tools we provide can be useful in the practical sense, since the training algorithms consider generalizability to the whole population,the classifiers are trained to have the best prediction performance. The features who seem to have correlation with the phenotype, but do not contribute to performance are not used in the classifiers. Same arguments are made in @Pepe2004.&lt;/p&gt;
+
+&lt;h2 id=&#34;contributions-contributions-unnumbered&#34;&gt;Contributions {#contributions .unnumbered}&lt;/h2&gt;
+
+&lt;p&gt;Our contributions are in two different fields: medical prognostics and machine learning .In this article, we will describe our contributions to cardiovascular research community and machine learning community. We address the “coherently” missing data problem in machine learning. Our method is comparable to previous methods available for handling missing data (such as probabilistic split of C4.5 and surrogate variables in CART decision tree algorithms) in terms of performance. The main reason for this novel way of handling missing data is that unlike most investigations in machine learning , our aim is not only to design and test a classifier algorithm, but also to find biomarkers that will predict a medical event. Due to the fact that we train our classifier using dataset provided by the Reynolds study which were carried out by medical personnel, the process that determines the missingness of a feature(biomarker) value(whether a patient undergoes the test for that biomarker, whether the test gives an unambigous and valid answer) might be specific to the medical protocol established by the study committee, and the protocol for testing multimodal biomarkers in heart patients is in no way fully established in the community. In order to preserve generalizability of our results to other datasets and general population, we make the assumption that missingness of any feature is not informative with respect to phenotype. It is possible we sacrifice some accuracy in performance &lt;em&gt;in this particular dataset&lt;/em&gt; for sake of integrity of the medical conclusions of our investigations.&lt;/p&gt;
+
+&lt;p&gt;Although missing data is a common problem, the coherence of the missing data seen in Reynolds dataset and other biomedical dataset that contains multimodal biomarkers makes our problem unique. Our two novel decision tree algorithms provide a way to address the missing data problem, even when large fraction of data missing(up to 50% for some feature modalities), by leveraging the coherence of the missing data. By coherence, we refer to the fact that nearly all missing data belong to subjects who have no data for all of the features in one or more of the modalities.&lt;/p&gt;
+
+&lt;p&gt;Although many individual biomarkers have been identified as valid prognostic variable for predicting SCD, to our knowledge there have not been a study which aims to combine the predictive power of biomarkers of differing modalities. The usual approach of stratifying the population according to a  Clinical variable(age,gender, ethnicity) and carrying out association or survival analysis techniques in the medical research community has led to many discoveries in diagnosis of health problems. Applying machine learning tools for prediction of disease risk provides an integrated picture of the relationship between the phenotype and the biomarkers, especially for interpretable classifiers such as decision trees. In fact, the interpretability motivated our decision to use decision trees.&lt;/p&gt;
+
+&lt;p&gt;The most important of our methodology contributions to the cardiovascular research is in the form of a set of decision tree algorithms that are appropriate for learning from multimodal biomedical datasets and decision making. Another contribution is a decision tree that was learned from Reynolds dataset that performs better than the current biomarker used (ejection fraction) in deciding to implant a person with a ICD device.&lt;/p&gt;
+
+&lt;h2 id=&#34;association-testing-of-features-with-death-and-appropriate-firing-association-testing-of-features-with-death-and-appropriate-firing-unnumbered&#34;&gt;Association Testing of Features with Death and Appropriate Firing {#association-testing-of-features-with-death-and-appropriate-firing .unnumbered}&lt;/h2&gt;
+
+&lt;p&gt;Survival analysis techniques were utilized to detect association of features with death and appropriate firing. Univariate Cox models were fitted, and p-value of Wald Tests are computed for each model. The tables present features that are significant at a level of 0.01.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;  Feature            exp-coef   p.value   samp.size
+------------------- ---------- --------- -----------
+2 QTVI\_log              1.51      0.01      521.00
+3 DEmass                 1.02      0.01      173.00
+4 HS.CRP                 1.02      0.00      567.00
+5 TNF.a.Rec.2            1.00      0.00      567.00
+6 HSIL.6                 1.01      0.00      566.00
+7 Pro.BNP                1.02      0.00      567.00
+8 CTNT                   1.14      0.00      566.00
+9 Age.At.Implant         1.04      0.00      477.00
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;These features were used in a multivariate Cox model , by incrementally adding each feature to the model, until at least one p-value for the coefficient for a feature became non-significant. The following table shows the summary from the final model.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;                 coef   exp(coef)   se(coef)      z   Pr($&amp;gt;$$|$z$|$)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;hr /&gt;
+
+&lt;pre&gt;&lt;code&gt;   TNF.a.Rec.2   0.00        1.00       0.00   4.36          1.3e-05
+        HSIL.6   0.01        1.01       0.00   2.47            0.014
+Age.At.Implant   0.03        1.03       0.01   3.14           0.0017
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;: Multivariate Cox Model Fit&lt;/p&gt;
+
+&lt;p&gt;Figures [fig:Kaplan-MeierCurve1][fig:Kaplan-MeierCurve2] [fig:Kaplan-MeierCurve3]show the two Kaplan-Meier plots for the three continuous features in the final multivariate Cox model. Each curve is the KM curve for one of the subpopulations: the subpopulation for which the biomarker value is lower than the median for the whole population, and that for which the biomarker value is higher than the median(NAs are removed).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;TNFlyxdot alyxdot Reclyxdot 2-KM-plot&#34; alt=&#34;\[fig:Kaplan-MeierCurve1\]&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;HSIL_6-KM-plot&#34; alt=&#34;\[fig:Kaplan-MeierCurve2\]&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;Age_At_Implant-KM-plot&#34; alt=&#34;\[fig:Kaplan-MeierCurve3\]&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;tools-sub-tools-toolssubtools-unnumbered&#34;&gt;Tools[sub:Tools] {#toolssubtools .unnumbered}&lt;/h2&gt;
+
+&lt;p&gt;Decision Trees are machine learning tools that are widely used in classification and regression tasks. Their popularity is due to conceptual simplicity, interpretability and the large class of possible decision boundaries they can portray. Since we have defined a binary phenotype as the dependent variable to be predicted, we’ll be using classification trees. However, regression and classification trees are not really different in terms of training and prediction steps. In fact, the prediction given by our decision trees can be interpreted as either a risk score, or an estimated probability of an SCD event.&lt;/p&gt;
+
+&lt;p&gt;Various other aspects of this study, and the data collected herein, have driven our design of methodology: It is necessary to merge data on subjects from several different modalities, including  SNP,  ECG, and IMAGE measurements. Whereas data from at least one such modality is available for most of the subjects, there are only a small number of subjects with data for all modalities; consequently, missing data is more the rule than exception.. The missing data problem is a common problem in the field of machine learning and various approaches to deal with it have already been tried and tested. Our case is unique in that the missingness is not sporadic. It is not only common, but also repeated across features in a modality. Due to the federated collection of data in the Reynolds dataset (and many other data collected for medical studies), a lot of N/As appear in a patterned way. That is , for some patients, ALL of the features in some modalities have non-NA values while ALL the features in the remaining modalities are NA. Depending on the modality a feature belongs to, some features might be missing in half of the Reynolds cohort. The systematically missing data necessisates a novel decision tree algorithm, in order to deal with cases where such a big fraction of data is missing(In Reynolds dataset, up to 50% for some feature modalities might be missing).&lt;/p&gt;
+
+&lt;h3 id=&#34;the-classical-classification-tree-model .unnumbered&#34;&gt;The classical classification tree model&lt;/h3&gt;
+
+&lt;p&gt;In a classification tree, the dependent variable is discrete, usually binary. By splitting dataset to more pure ones in terms of the dependent variable, the model can find the most effective variables by which it uses for dividing. When certain purity is reached, the model stops splitting, then we call the stop point a leaf. Each splitting is called branches. In the tree structures, leaves represent classifications and branches represent conjunctions that lead to those classifications. Now, lets look at an example. Suppose $Y$ is dependent variable (binary), $X&lt;em&gt;{1}$, $X&lt;/em&gt;{2}$, $X&lt;em&gt;{3}$, $X&lt;/em&gt;{4}$ and $X&lt;em&gt;{5}$ are independent variables which are used to predict Y. First, the model tries to find the best variable $X&lt;/em&gt;{i}$ among $X&lt;em&gt;{1}$ to $X&lt;/em&gt;{5}$ and critical value $A$, so that when dividing the whole dataset to two datasets based on the criteria $X\geq A$ or $X&amp;lt;A$, the purities of two new datasets are the highest. Lets say, $X_{1}$ is such a variable. Then we have:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;Image001&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now repeat the procedure to each sub dataset (nod) until every sub dataset reaches certain pre-specified purity. So we have a list of variables which we use to divide the dataset. We also have a series of critical values ($C&lt;em&gt;{1}$, $C&lt;/em&gt;{2}$, $C_{3}$…) which correspond to each splitting $j$. In the end we have tree graph like this.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;Image002_2&#34; alt=&#34;image&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;At each leaf, the purity of $Y$ is above certain level, and we have posterior distributions of $Y$ given the series of conditions (e.g. $X&lt;em&gt;{1}&amp;lt;A$, $X&lt;/em&gt;{2}\geq C$ and so on). So we can estimate $Y$ based on $X&lt;em&gt;{1}$ to $X&lt;/em&gt;{5}$. Please note that not all the variables have to be used in the analysis. The program only picks the best variables to split the dataset. It is very possible that several variables are not picked. For example, in the diagram above, $X_{3}$ is not used anywhere in the analysis.&lt;/p&gt;
+
+&lt;p&gt;The algorithms we have developed and proposed for dissemination are all written in the R programming language and build on various existing R packages.&lt;/p&gt;
+
+&lt;h2 id=&#34;phenotype-sub-phenotype-phenotypesubphenotype-unnumbered&#34;&gt;Phenotype[sub:Phenotype] {#phenotypesubphenotype .unnumbered}&lt;/h2&gt;
+
+&lt;p&gt;The definition of the classification problem should be considered carefully. As in a lot of bioinformatics applications, the real-life problem is a lot more complicated than a typical $2-class$ or $n-class$ classification problem. Each patient should be assignable to one of the classes. Some of the considerations when defining the classes are interpretability and practical value to the cardiovascular community. A practical issue is whether that the class a patient is assigned to can be inferred from the available information in the dataset.&lt;/p&gt;
+
+&lt;p&gt;Although the initial version of our prediction task was to predict ,the group of patients for whom an ICD device is really necessary among patients who have been implanted by the device . This aim is vague in its definition of “necessary” due to several reasons,&lt;/p&gt;
+
+&lt;p&gt;Just because the ICD has not been utilized up to a time point, does not mean it’s not going to be utilized later on. The ICD might have fired, but this might be due to a malfunction of the its sensors, or arrhythmia events not treatable by the therapy administered by the device.&lt;/p&gt;
+
+&lt;p&gt;Therefore, we propose modification of the prediction task as predicting the following defined phenotype.&lt;/p&gt;
+
+&lt;p&gt;$$\begin{cases}
+0 | \mbox{If the patient is alive after 545 days after the implantation of ICD device}&lt;br /&gt;
+1 | \mbox{If the patient has died within 545 days after the implantation of ICD device}\end{cases}$$&lt;/p&gt;
+
+&lt;p&gt;An inevitable effect of the definition of the phenotype is the removal of subjects from the dataset for whom the phenotype is not defined. For example, any patient who is alive a year after his/her implantation, but have been censored before their status at 545 days (after implantation) becomes known has to be removed from the study, due to their phenotype being unknown. Consider a patient who has died within 545 days since implantation, but have been implanted recently,say 150 days before the end of the study(or today if the study is undergoing): the phenotype will be defined for this patient and will equal to 1 . In contrast, a patient which possibly belongs to the other class, and which has been implanted 150 days before the end of the study will be removed from the dataset. This will create a bias in the dataset, as instances of one class belonging to a random subset of dataset(the implantation date has no effect on the phenotype) are removed, while the instances of the other class belonging to the same subset are kept. To remove this bias, we only include subjects who have been observed for at least 545 days in the study, so that instances of either class are removed when they belong to the random subset defined by the date of implantation.&lt;/p&gt;
+
+&lt;h2 id=&#34;classifiers-classifiers-unnumbered&#34;&gt;Classifiers {#classifiers .unnumbered}&lt;/h2&gt;
+
+&lt;p&gt;Two novel decision tree structures are used. These trees are designed to handle our unique problem of systematically missing data.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Trees with Substitute sub-trees&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Modality-Based Trees&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In each fold of cross-validation, decision trees with one of the two structures are generated and validated on the left-out portion of the dataset. The validation instances are given a risk score based on the leaf node they end up in. Sensitivity/Specificity points are computed for varying decision thresholds for binarizing the risk scores into two class labels of the phenotype.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;For each run of cross-validation, sim =1:NUM_SIMS&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Create a N-partition of 1:NUM_SAMPLES&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;For each part of the N-partition, k = 1:N&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Designate samples in kth part(left-out samples) as the validation set&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Designate remaining samples as the training set.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Train the decision tree on the training set (Using algorithms 2 and 3 for tree of the first kind, and the second kind.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;For each threshold value t = t_1: t_L&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;For each left-out sample&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Determine the leaf node the sample end up in, by traversing down the tree according to its feature values.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Compare the class distribution of the training set in the leaf node with the threshold value t to decide on the class prediction.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Compute the performance measures for threshold t based on the class predictions and the class labels&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Trees with Substitute sub-trees: These are ternary decision trees. Each query of feature value has three possible answers: True(Discrete feature value is equal to the value in the query, or Continuous feature value is less than or equal to given threshold in the query),False(Discrete feature value is NOT equal to the value in the query, or Continuous feature value is NOT less than or equal to given threshold in the query) or N/A(Feature value is not available). During training, all the population in a node gets “copied” to the NA node(say “Node 1”) to find another split ( a &lt;em&gt;substitute&lt;/em&gt; split) that is appropriate for the population. Since the missingness is common across all of the features in a modality, if the &lt;em&gt;substitute&lt;/em&gt; split uses a feature in the same modality as the feature used in the previous split, the same set of instances that is missing the features in the modality will be sent to child NA node(say “Node 2”). If any such instance was used as a test instance, it would be never asked a real question, since it would be sent down to NA branches at all of the splits . To overcome this problem, the set of features that are considered for the &lt;em&gt;substitute&lt;/em&gt; split are a reduced set of the original set of features: All features belonging to the same modality of the original feature are removed from the set of features that will be considered in any further splits(all of the splits in the subtree whose root node is the NA node). In the figure below, Feature 2 is selected from the features in the modalities other than the one containing Feature 1.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;img src=&#34;na_tree_subst_depth2&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;One of the stopping criteria of this algorithm has to do with a node property called “real depth” which is the number of non-NA answers to the split questions that have been asked starting from the root node and ending up in the node in question. Since NA values are considered noninformative, we make sure the splitting does not stop until all of the samples are asked two questions whose answers are TRUE or FALSE.We have defined real depth of a node as the number of non-NA nodes in the path from the root node to the node in question. Consider traversing from the root node,to the node in question; at any node, if the feature value for the split is NA, the NA child node is traversed and real depth stays the same. If the feature is available, one traverses to the left or right node and real depth increases by 1. To make sure a minimum number of real questions have been asked , that is, each of the set of samples have been sent down the non-NA branches at least $d$ times, we set the minimum real depth parameter to $d$. In most of our experiments,we choose the $d$ parameter as 2 The node splitting does not stop until all instances are nodes that have real depths that are greater or equal to 2.&lt;/p&gt;
+
+&lt;p&gt;Given the training samples and the class labels for those samples&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Initialize a new tree with a root node&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Collect all of the samples in the root node&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;For every leaf node, until all of the leaf nodes have been processed&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;If all of the samples are in unsplittable nodes, or nodes that have a real depth larger than the min.real.depth parameter, stop splitting&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;If max. depth is reached, or the node is an unsplittable leaf node, skip to next leaf node&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;For each possible split in a leaf node,&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Compute the change in entropy: the conditional entropy of the class random variable given the answer to the query of the split minus the original entropy of the class random variable. The entropies are estimated from the samples for which the feature values are available&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Find the best split among the possible splits&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Create three children nodes and mark them as unprocessed : the samples which have available feature values populate the first two children nodes according to their feature values. The third child node which will be traversed to in case of unavailable feature values is populated with all of the samples in the current node.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Mark the current node as processed&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Return the resulting tree&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Modality -Based Trees: It therefore makes sense to divide the dataset into subsets each of which is composed of subjects that contains non-NA feature values for all of the features in a modality group. This approach allows the use of classical decision trees to use only features in the modalities in the chosen group and the subset of data to train a tree where NAs do not appear in any of the queries.Suppose we have three groups of modalities: $A$, $B$ and $C$. Then it is possible to train 8 trees from the eight subsets of a dataset $\mathbf{D}$. Each of the subsets will be define as $\mathbf{D}&lt;em&gt;{S}={\mathbf{D}[i,.]):i\in I,\mathbf{D}[i,x]\neq NA\forall x\, such\, that\, x\in S}$ where $S\in\left{ \left{ A\right} ,\left{ B\right} ,\left{ C\right} ,\left{ A\cup B\right} ,\left{ A\cup C\right} ,\left{ B\cup C\right} ,\left{ A\cup B\cup C\right} \right} $. Note that for Reynolds dataset, $A$=“ SNP”,B=“ ECG”, $C$=“ Imaging” and we preprocess the original dataset of $\mathbf{D&lt;/em&gt;{orig}}$. $\mathbf{D}$ is defined as the subset of $\mathbf{D}&lt;em&gt;{orig}$ for which there’s no NA values for the features in $D$=PROTEIN and $E$=“ Clinical”. That is$\mathbf{D}={\mathbf{D}&lt;/em&gt;{orig}[i,.]):i\in I\,,\mathbf{\,\mathbf{D}&lt;em&gt;{orig}}[i,x]\neq NA\forall x\, such\, that\, x\in T}$ where $T$=$\left{ D\cup E\right} $ and $\mathbf{D&lt;/em&gt;{orig}}$ is the original dataset.&lt;/p&gt;
+
+&lt;p&gt;Given the training samples and the class labels for those samples,&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Consider 5 feature modalities( SNP, ECG, Imaging,PROTEIN, Clinical) and 8 groups of modalities that all include PROTEIN AND  Clinical&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Create 8 training sets from the training samples , each composed of the samples that have all of the features in a group of modalities&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;For MODAL.GROUP=1:8&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Initialize a new tree with a root node&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;In the root node, Collect all of the samples in the training set corresponding to the group of modalities with index MODAL.GROUP&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Until all of the leaf nodes have been processed&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;For each possible split in a leaf node, compute the change in entropy: the conditional entropy of the class random variable given the answer to the query of the split minus the original entropy of the class random variable. The entropies are estimated from the samples for which the feature values are available&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Find the best split among the possible splits&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Create two children nodes and mark them as unprocessed : the samples which have available feature values populate the first two children nodes according to their feature values.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Mark the current node as processed&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Given the feature values for a patient, and the trained decision tree with the split rules and decision rules,and a decision threshold:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Starting from the root node, until a leaf node is reached&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Choose one of the children nodes to proceed to, based on the split rule&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The predicted risk score for the given patient is the risk score of the leaf node.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Classify the patient according to whether the predicted risk score is larger or smaller than the given decision threshold.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Return the class label&lt;/p&gt;
+
+&lt;p&gt;Given the feature values for a patient, and the trained Modality-Based decision trees with the split rules and decision rules and a decision threshold:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Determine which feature modalities are available for the patient and all possible groups of these modalities.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;For each of the groups of modalities and its corresponding modality-based tree,&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Run the decision tree prediction algorithm, to compute the predicted risk score for an individual tree.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Compute average of the predicted risk score from individual trees.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Compare the average with the given decision threshold to predict the class label.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Return the predicted class label&lt;/p&gt;
+
+&lt;h2 id=&#34;split-criterion-split-criterion-unnumbered&#34;&gt;Split Criterion {#split-criterion .unnumbered}&lt;/h2&gt;
+
+&lt;p&gt;During training decision trees, some criterion based on the class distribution in a node is used to decide the way the node should be split(which feature and what threshold value should be used) . One of the more popular criteria is the change in entropy between original entropy of the dependent(class) variable and conditional entropy( conditioned on the split query). N/A feature values prove to be a challenge in the computation of these quantities. If one assumes N/A answer to the split query is informative, “N/A” could be treated as another possible answer to the split query. It is then natural to consider a ternary split in the node, in which the extra child for the split node is populated by subjects with N/A answers to the query. In fact, our initial version of decision trees (dubbed as NA Trees) designed to solve the missing data problem worked in such fashion. It is similar to a possible approach to missing value problem, treating NAs as another categorical variable value. In our application problem, the assumption of informative N/A values is undesirable. Therefore the entropy split criterion for a candidate feature is computed based on the subjects with a non-N/A value for that feature. In case of modality-based trees, there is no necessity for consideration of N/A values, since ,for each group of modality , the dataset is filtered to have have no N/As for the features in that group.&lt;/p&gt;
+
+&lt;h2 id=&#34;feature-selection-feature-selection-unnumbered&#34;&gt;Feature Selection {#feature-selection .unnumbered}&lt;/h2&gt;
+
+&lt;p&gt;For the experiments, a subset of these features are used which have been deemed relevant by cardiovascular experts. These features are divided into two groups, according to the the experts’ certainty of association with SCD and/or ICD firing.&lt;/p&gt;
+
+&lt;p&gt;Primary Expert Features :  SNP1 , SNP3 ,LVEF, DEmass ,SDNN_msec , LFdivHFplLF , QTVI_log ,Inducible , Race ,ECHOEF , HS.CRP, TNF.a.Rec.2, HSIL.6 ,Pro.BNP ,Il.10, CTNT ,CKNB ,Myoglobin, Tropin.I&lt;/p&gt;
+
+&lt;p&gt;Secondary Expert Features:  SNP2,  SNP6 ,LVEDV, QTintmean_sec ,meanNN_msec, Gender ,Age.At.Implant&lt;/p&gt;
+
+&lt;h2 id=&#34;results-and-plots-results-and-plots-unnumbered&#34;&gt;Results and Plots {#results-and-plots .unnumbered}&lt;/h2&gt;
+
+&lt;p&gt;15 runs of cross-validated training and testing sessions were carried out. By using different threshold values for the binary decision during the testing step, different sensitivity and specificity values for the two decision tree algorithms were found. Figure 1 shows the obtained points which form the ROC curve.&lt;/p&gt;
+
+&lt;p&gt;Both types of decision trees are trained on a portion of the dataset and tested on the remaining portion with each class decision threshold value. For each threshold value, different class predictions might be made, so the number of true positives and false negatives change for each class decision threshold. The number of true positives and true negatives are recorded for each threshold value separately. Finally, sensitivity and specificity is computed from the number of true positives and true negatives for each threshold value. Multiple runs of cross-validations increase the number of available ROC points(points whose coordinates are sensitivity , 1-specificity pairs).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;modality_vs_substitute_Trees&#34; alt=&#34;Points on the ROC curves for the two decision tree types\
+Predicted phenotype is Death event within 545 days after implantation.&#34; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&#34;comparison-of-novel-tree-algorithms-with-currently-used-biomarkers-in-cardiovascular-community .unnumbered&#34;&gt;Comparison of Novel Tree Algorithms with currently used biomarkers in cardiovascular community&lt;/h3&gt;
+
+&lt;p&gt;One of our aims in this project was to have interpretable classifiers that would improve the current practices of the cardiovascular community.To validate our accomplishment of this goal, we tested the two novel decision tree algorithms we devised and the ejection fraction biomarker( used in deciding whether a patient needs an ICD device) In this experiment, we are testing the prediction of Death event within 545 days in the population that Modality-Based Trees are valid for(PROTEIN and  Clinical features are all available).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;ROCcomparisonofModal_TreeSubst_TreeSingFeature&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The following trees are generated when the training algorithm is applied to all of the available data. The following tree (Fig. 2) is the result of substitute tree algorithm. Figures 3,4 and 5 are three examples of modality-based trees with codes 000,100,010(The binary digits show the presence of the modalities  SNP, ECG, Imaging ,respectively, in the group)&lt;/p&gt;
+
+&lt;h2 id=&#34;evaluation-of-our-missing-data-handling-method-subst-tree-vs-probabilistic-split-of-c4-5-evaluation-of-our-missing-data-handling-methodsubst-tree-vs-probabilistic-split-of-c4-5-unnumbered&#34;&gt;Evaluation of Our Missing Data Handling Method(Subst Tree) vs Probabilistic Split of C4.5 {#evaluation-of-our-missing-data-handling-methodsubst-tree-vs-probabilistic-split-of-c4.5 .unnumbered}&lt;/h2&gt;
+
+&lt;p&gt;Due to the novelty of the missing data method we employ, it is necessary to validate this method by comparing its performance with other missing data methods, such as the probabilistic split method used in C4.5 trees. The results of cross-validated simulations for Substitute Trees and C4.5 Trees is compared. We try different depth parameters for the trees. The two parameters controlling the decision to split a leaf node is : max.depth, and min.real.depth. min.real.depth is the minimum number of questions an instance gets asked unless it ends up in a pure node(either a node populated by too little number of positive instances, or no positive instances) in the final tree after stopping splits. max.depth is the maximum depth any leaf node can have.If all the leaf nodes reach max.depth, the splitting stops. For the Reynolds dataset, the tree shown shows a decision tree trained using all available data with parameters max.depth=3 and min.real.depth = 2&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;SubstTrees_Vary_Depth&#34; alt=&#34;Trees With Substitute Subtrees&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;c4_5Trees_Vary_Depth&#34; alt=&#34;Unpruned C4.5 Trees&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;Subst_Tree_C4_5_Comparison_Vary_Depths&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;An alternative dataset is also used to see whether any difference (or lack of) between the two missing data handling is specific to the Reynolds dataset. The dataset that is used is “Multiple Feature” dataset available in UCI Machine Learning Repository@Asuncion+Newman:2007 .The dataset consists of features extracted from handwritten digits. This dataset was chosen because the attributes are grouped in different &lt;em&gt;modalities&lt;/em&gt;.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;mfeat-fou: 76 Fourier coefficients of the character shapes;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;mfeat-fac: 216 profile correlations;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;mfeat-kar: 64 Karhunen-Love coefficients;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;mfeat-pix: 240 pixel averages in 2 x 3 windows;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;mfeat-zer: 47 Zernike moments;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;mfeat-mor: 6 morphological features.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The class label in the dataset was changed(TRUE if the digit was 0, FALSE if the digit was not 0) to make it appropriate for a binary classification problem.Since the decision to use the missing data method we have incorporated into the decision tree algorithm was guided by the specific structure of the Reynolds dataset(in general, medical datasets of multiple modalities), we decrease the sample size of the given “Multiple Feature” dataset ,decrease the number of features( a fixed proportion of features from each modality are removed randomly), introduce missing values to all features of a certain modality for randomly selected patients. The missing data rate is different for each modality. We then do cross-validation simulations of Subst Trees and C4.5 Trees of fixed depth. C4.5 trees have maximum depths 4,3,2,1 and are unpruned(The leaf nodes are split until the tree reaches the maximum depth unless the node is pure, or the node has the minimum allowed number of instances ). A constraint similar to the minimum allowed number of instances exist for splitting in Subst Tree algorithm: a node is not split according to a feature, if the number of instances belonging to minority class with that feature available is below a minimum threshold. Therefore, nodes ca not contain smaller number of instances than two times this threshold, and features with too many missing values are not selected during the search for best split. Therefore the two tree algorithms are on a equal setting, and the main difference is the missing data method. The following plot is the comparison of performance for different tree algorithms/parameters.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;Realworlddataset_subst_vs_c4_5_final&#34; alt=&#34;Unpruned C4.5 Trees on Multiple Features Dataset&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The original dataset consists of 200 positive instances and 1800 negative instances and the number of samples are reduced from to $\frac{1}{5}$th of their original counts(400 in total). For each of the 6 modalities, $\frac{1}{20}$th of the features in a modality are randomly selected. For each modality, feature values are changed to missing for fractions of 0.05, 0.15, 0.2, 0.3, 0.4, 0.5,respectively, of the instances.&lt;/p&gt;
+
+&lt;h2 id=&#34;performance-of-trees-on-alternative-phenotypes-performance-of-trees-on-alternative-phenotypes-unnumbered&#34;&gt;Performance of Trees on Alternative Phenotypes {#performance-of-trees-on-alternative-phenotypes .unnumbered}&lt;/h2&gt;
+
+&lt;p&gt;Various other phenotypes are of relevance.[sub:Phenotype] A natural question would be to see how well the trees perform when they are trained on the original phenotype(Death event within 545 days) and tested on different phenotypes such as Appropriate Firing, Firing,etc.. also within 545 days. This would give an idea of how informative the trees are with respect to different heart disease events, and whether alternative phenotypes can be substituted with the original phenotype in case it’s impossible or prohibitively expensive to collect data for the original phenotype outcome.&lt;/p&gt;
+
+&lt;p&gt;For this experiment, only patients who have been implanted for 545 days at the end of the study have been included , as before. Decision trees of the two types were trained on this dataset. These two decision trees were then tested to predict alternative phenotypes( such as death within 1095 days, firing, appropriate firing, sudden death OR appropriate firing,&amp;hellip; within 545 days) If a phenotype is not defined for some of the patients, those patients are removed from testing. By varying the class decision threshold value, we get an ROC curve for each alternative phenotype. No cross-validation takes place for this simulation.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;ROCcurves_for_ModalTrees_on_Alt_Phenotype&#34; alt=&#34;Performance of Modality-Based Trees on Alternative Phenotypes&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;subst_tree_on_alt_phenotype&#34; alt=&#34;Performance of Trees with Substitute Subtrees on Alternative Phenotypes&#34; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;performance-of-modality-based-binary-trees-on-subsamples-performance-of-modality-based-binary-trees-on-subsamples-unnumbered&#34;&gt;Performance of Modality-Based Binary Trees on subsamples {#performance-of-modality-based-binary-trees-on-subsamples .unnumbered}&lt;/h2&gt;
+
+&lt;p&gt;Each binary tree that is generated in the Modality-Based Trees algorithm is trained on a subset of the whole dataset.(A subset consists of all the instances that has the features in a group of modalities). We should note these subsets are usually overlapping. Most of the patients have all of the PROTEIN and  Clinical features. If the dataset is limited to patients having all of these features, only a small number of patients will be excluded. To keep the number of trees that need to be trained to a minimum, we limit the dataset to patients who have these features, and different modality groups are defined as subsets of { SNP, ECG, Imaging} modalities. These groups are coded as a 3-digit binary numbers. To answer the question of which of the trees generated might be more dependable as a classifier, cross-validated performance measures were computed for each of these binary trees. The algorithm is defined in [alg:Computation-of-Performance]. For each run of the simulation, each modality group of features and the instances for which those features in the group were available for were considered as a separate dataset. Multiple cross-validated training/testing session were run using each such dataset. An ROC curve(averaged) was drawn for each dataset in [fig:Average-of-ROC].&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;ul&gt;
+&lt;li&gt;For each run of cross-validation, sim =1:NUM_SIMS&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;For each group of modalities being considered, MODAL.CODE =1:8&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Set DATASET.MODAL to subset of data for which MODAL.AVAILABLE is true for all of the modalities in the group with code MODAL.CODE&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Set NUM_SAMPLES to size of DATASET.MODAL&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Create a N-partition of 1:NUM_SAMPLES&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;For each part of the N-partition, k = 1:N&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Designate samples in kth part(left-out samples) as the validation set&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Designate remaining samples as the training set.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Train a $\mbox{\emph{BINARY}}$ tree on the training set&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;For each threshold value t = t_1: t_L&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;ul&gt;
+&lt;li&gt;For each left-out sample,&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;ul&gt;
+&lt;li&gt;Determine the leaf node the sample ends up in, by traversing down the tree according to its feature values.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;ul&gt;
+&lt;li&gt;Compare the class distribution of the training set in the leaf node with the threshold value t to decide on the class prediction.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;ul&gt;
+&lt;li&gt;Compute the performance measures(sensitivity, specificity) for threshold t based on the class predictions and the class labels&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Collect the performance measures for the group with MODAL.CODE for this run of cross-validation&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;For each group of modalities being considered, MODAL.CODE =1:8&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Collect performance measures for the group with MODAL.CODE over all of the runs. Use this collection of ROC points to draw an average curve for the group.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The resulting ROC curves can be seen in Fig. 6. The legends show the color coding of the feature modalities.. A digit of 1 for a modality represents all the features in that modality have non-NA values.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;ROCRcurves-Modality_Treeexpert_Death-545&#34; alt=&#34;\[fig:Average-of-ROC\]Average of ROC curves for each group of modalities&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The sample sizes, and distribution of the classes are as follows in the root nodes for each modality tree.&lt;/p&gt;
+
+&lt;p&gt;|  SNP/ ECG/ Imaging&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; | Positive Phenotype | Negative Phenotype | Total Sample Size|
+| 000 | 29 | 411 | 440|
+| 100 | 20 | 301 | 321|
+| 010 | 22 | 280 | 302|
+| 001 | 6 | 139 | 145|
+| 110 | 18 | 255 | 273|
+| 101 | 4 | 100 | 104|
+| 011 | 4 | 88 | 92|
+| 111 | 3 | 58 | 61|
+| Original Dataset&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:2&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:2&#34;&gt;2&lt;/a&gt;&lt;/sup&gt; | | | |&lt;/p&gt;
+
+&lt;h2 id=&#34;performance-on-death-within-1095-days-phenotype-performance-on-death-within-1095-days-phenotype-unnumbered&#34;&gt;Performance on “Death Within 1095 Days” phenotype {#performance-on-death-within-1095-days-phenotype .unnumbered}&lt;/h2&gt;
+
+&lt;p&gt;We’ve also run different decision tree algorithm for one of the alternative phenotypes: Death within 1095 Days. The dataset we utilize is a subset of the dataset “Death Within 545 Days” phenotype, since there are less patients who have been observed for at least 3 years The sample size is 54 for the positive phenotype(Death event within 1095 days) and 329 for the negative phenotype for a total of 383 patients.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;1095_days-SubstTree_MaxD_3-MinD_2&#34; alt=&#34;These points on the ROC curve illustrate how Substitute Trees with a maximum depth of 3 and minimum real depth of 2 perform.&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;1095_days-SubstTreeaggregate_plot.png&#34; alt=&#34;These plots of ROC curves compare how Substitute Trees and C4.5 trees with different depth parameters perform.&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;1095_days-Subst_C4_5aggregate_plot&#34; alt=&#34;These plots of ROC curves compare how Substitute Trees and C4.5 trees with different depth parameters perform.&#34; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;1095_days-REPTreeaggregate_plot&#34; alt=&#34;These plots of ROC curves compare how Substitute Trees and C4.5 trees with different depth parameters perform.&#34; /&gt;&lt;/p&gt;
+&lt;div class=&#34;footnotes&#34;&gt;
+
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34;&gt;PROTEIN and  Clinical modalities must present in all of these subsets of the dataset except Original Dataset
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:1&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34;&gt;Patients who have been implanted for 545 days
+ &lt;a class=&#34;footnote-return&#34; href=&#34;#fnref:2&#34;&gt;&lt;sup&gt;^&lt;/sup&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>Seeded Graph Matching</title>
