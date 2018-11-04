@@ -5,6 +5,15 @@
     
     <url>
     
+      <loc>https://adalisan.github.io/post/graph-matching-and-spaces/</loc>
+      <lastmod>2018-07-26T21:06:09-04:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://adalisan.github.io/project/aladdin/</loc>
       <lastmod>2017-05-15T00:00:00+00:00</lastmod>
     </url>
@@ -15,15 +24,6 @@
     <url>
     
       <loc>https://adalisan.github.io/project/cvrg/</loc>
-      <lastmod>2017-05-15T00:00:00+00:00</lastmod>
-    </url>
-    
-  
-    
-    
-    <url>
-    
-      <loc>https://adalisan.github.io/publication/cvrg-tech-report/</loc>
       <lastmod>2017-05-15T00:00:00+00:00</lastmod>
     </url>
     
@@ -86,7 +86,7 @@
     
     <url>
     
-      <loc>https://adalisan.github.io/publication/sgm/</loc>
+      <loc>https://adalisan.github.io/publication/infracv/</loc>
       <lastmod>2016-11-10T00:00:00+00:00</lastmod>
     </url>
     
@@ -167,6 +167,15 @@
     
     <url>
     
+      <loc>https://adalisan.github.io/post/building_r_package/</loc>
+      <lastmod>2014-08-12T19:55:16+00:00</lastmod>
+    </url>
+    
+  
+    
+    
+    <url>
+    
       <loc>https://adalisan.github.io/post/2014-08-12-first-post/</loc>
       <lastmod>2014-08-12T19:55:16+00:00</lastmod>
     </url>
@@ -224,7 +233,7 @@
     <url>
     
       <loc>https://adalisan.github.io/publication_types/3/</loc>
-      <lastmod>2017-05-15T00:00:00+00:00</lastmod>
+      <lastmod>2016-11-10T00:00:00+00:00</lastmod>
       <priority>0</priority>
     </url>
     
