@@ -7,30 +7,13 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Sancar Adali</copyright>
-    <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/tags/" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 15 May 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://adalisan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
-      <title>Content tagged as &#39;Academic&#39;</title>
-      <link>https://adalisan.github.io/tags/academic/</link>
-      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://adalisan.github.io/tags/academic/</guid>
-      <description>&lt;p&gt;Here is a list of all the content that has been tagged as &lt;em&gt;academic&lt;/em&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Big Data</title>
-      <link>https://adalisan.github.io/tags/big-data/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://adalisan.github.io/tags/big-data/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bioinformatics</title>
+      <title>bioinformatics</title>
       <link>https://adalisan.github.io/tags/bioinformatics/</link>
       <pubDate>Mon, 15 May 2017 00:00:00 +0000</pubDate>
       
@@ -39,7 +22,7 @@
     </item>
     
     <item>
-      <title>Computer Vision</title>
+      <title>computer-vision</title>
       <link>https://adalisan.github.io/tags/computer-vision/</link>
       <pubDate>Mon, 15 May 2017 00:00:00 +0000</pubDate>
       
@@ -48,25 +31,7 @@
     </item>
     
     <item>
-      <title>Data Analysis</title>
-      <link>https://adalisan.github.io/tags/data-analysis/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://adalisan.github.io/tags/data-analysis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Data Fusion</title>
-      <link>https://adalisan.github.io/tags/data-fusion/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://adalisan.github.io/tags/data-fusion/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Deep Learning</title>
+      <title>deep-learning</title>
       <link>https://adalisan.github.io/tags/deep-learning/</link>
       <pubDate>Mon, 15 May 2017 00:00:00 +0000</pubDate>
       
@@ -75,52 +40,7 @@
     </item>
     
     <item>
-      <title>Demo</title>
-      <link>https://adalisan.github.io/tags/demo/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://adalisan.github.io/tags/demo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dimensionality Reduction</title>
-      <link>https://adalisan.github.io/tags/dimensionality-reduction/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://adalisan.github.io/tags/dimensionality-reduction/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dissimilarity Representation</title>
-      <link>https://adalisan.github.io/tags/dissimilarity-representation/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://adalisan.github.io/tags/dissimilarity-representation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Graph Analysis</title>
-      <link>https://adalisan.github.io/tags/graph-analysis/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://adalisan.github.io/tags/graph-analysis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Graph Matching</title>
-      <link>https://adalisan.github.io/tags/graph-matching/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://adalisan.github.io/tags/graph-matching/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machine Learning</title>
+      <title>machine-learning</title>
       <link>https://adalisan.github.io/tags/machine-learning/</link>
       <pubDate>Mon, 15 May 2017 00:00:00 +0000</pubDate>
       
@@ -129,7 +49,115 @@
     </item>
     
     <item>
-      <title>Manifold Matching</title>
+      <title>risk-prediction</title>
+      <link>https://adalisan.github.io/tags/risk-prediction/</link>
+      <pubDate>Mon, 15 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/tags/risk-prediction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>survival-analysis</title>
+      <link>https://adalisan.github.io/tags/survival-analysis/</link>
+      <pubDate>Mon, 15 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/tags/survival-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>video-processing</title>
+      <link>https://adalisan.github.io/tags/video-processing/</link>
+      <pubDate>Mon, 15 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/tags/video-processing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Content tagged as &#39;Academic&#39;</title>
+      <link>https://adalisan.github.io/tags/academic/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/tags/academic/</guid>
+      <description>Here is a list of all the content that has been tagged as academic.</description>
+    </item>
+    
+    <item>
+      <title>big-data</title>
+      <link>https://adalisan.github.io/tags/big-data/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/tags/big-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data-analysis</title>
+      <link>https://adalisan.github.io/tags/data-analysis/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/tags/data-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data-fusion</title>
+      <link>https://adalisan.github.io/tags/data-fusion/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/tags/data-fusion/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>demo</title>
+      <link>https://adalisan.github.io/tags/demo/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/tags/demo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dimensionality-reduction</title>
+      <link>https://adalisan.github.io/tags/dimensionality-reduction/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/tags/dimensionality-reduction/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dissimilarity-representation</title>
+      <link>https://adalisan.github.io/tags/dissimilarity-representation/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/tags/dissimilarity-representation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>graph-analysis</title>
+      <link>https://adalisan.github.io/tags/graph-analysis/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/tags/graph-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>graph-matching</title>
+      <link>https://adalisan.github.io/tags/graph-matching/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/tags/graph-matching/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>manifold-matching</title>
       <link>https://adalisan.github.io/tags/manifold-matching/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
@@ -138,11 +166,11 @@
     </item>
     
     <item>
-      <title>Risk Prediction</title>
-      <link>https://adalisan.github.io/tags/risk-prediction/</link>
-      <pubDate>Mon, 15 May 2017 00:00:00 +0000</pubDate>
+      <title>visualization</title>
+      <link>https://adalisan.github.io/tags/visualization/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://adalisan.github.io/tags/risk-prediction/</guid>
+      <guid>https://adalisan.github.io/tags/visualization/</guid>
       <description></description>
     </item>
     

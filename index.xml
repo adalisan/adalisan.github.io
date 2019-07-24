@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sancar Adali - personal website on Sancar Adali - personal website</title>
@@ -7,8 +6,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Sancar Adali</copyright>
-    <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 Mar 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Seeded Graph Matching</title>
+      <link>https://adalisan.github.io/publication/sgm/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/publication/sgm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>graph matching and spaces</title>
+      <link>https://adalisan.github.io/post/graph-matching-and-spaces/</link>
+      <pubDate>Thu, 26 Jul 2018 21:06:09 -0400</pubDate>
+      
+      <guid>https://adalisan.github.io/post/graph-matching-and-spaces/</guid>
+      <description>&lt;p&gt;Part of &lt;a href=&#34;{{&amp;lt; ref &amp;quot;publication/thesis.md&amp;quot; &amp;gt;}}&#34; target=&#34;_blank&#34;&gt;my dissertation research&lt;/a&gt; was on the graph matching problem. For solving this problem in real settings, it is useful to think of vertices as elements of a space with the edges determining some sort of locality, (I guess this can be formalized with topology ). Then the graph/vertex matching problem becomes sort of a point cloud matching problem where you don&amp;rsquo;t know where the points are  , just the neighborhood relationships between them ( several manifold learning uses these relationships to find the manifolds defined by the points ). That is why embedding the vertices of the two graph using dissimilarities between vertex pairs can be used to match graphs. This is how we have used &lt;a href=&#34;{{&amp;lt; ref &amp;quot;publication/SGMviaJOFC.md&amp;quot; &amp;gt;}}&#34; target=&#34;_blank&#34;&gt;JOFC&lt;/a&gt; for seeded graph matching.&lt;/p&gt;
+
+&lt;p&gt;The same paradigm works with point cloud registration or matching manifolds. For example, see  &lt;a href=&#34;https://arxiv.org/pdf/1710.04087.pdf&#34; target=&#34;_blank&#34;&gt;this paper by Facebook researchers &lt;/a&gt; for matching between  monolingual word embeddings in different languages. They start by finding a rigid transformation  between the two word embeddings in different languages (say english and french), based on closest matches using Procrustes method. They then modify the distance between an english vector mapped french and a french vector to solve  the point density problem: hub words (that are common words in either corpora) will have emeddings that are close to many other words  will be matched to many other words , and easily confused . I think this also applies to  hub vertices that are connected to many other vertices in graph matching. The distance modification uses  the number of words in the neighborhood of a common word , so that more dense regions of the embedding spaces will see this cross-domain distance increase. Another possible solution to this nonhomogenous point density in the embedding spaces may be using hyperbolic embeddings which I will summarize in another post.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>ALADDIN</title>
@@ -16,7 +36,7 @@
       <pubDate>Mon, 15 May 2017 00:00:00 +0000</pubDate>
       
       <guid>https://adalisan.github.io/project/aladdin/</guid>
-      <description>&lt;p&gt;Software Development &amp;amp; Research for interactive system that carries out training and search for events in videos.&lt;/p&gt;
+      <description>&lt;p&gt;Software Development &amp;amp; Research for interactive system that carries out training and search for events in big video collections. &lt;a href=&#34;https://www.iarpa.gov/index.php/research-programs/aladdin-video&#34; target=&#34;_blank&#34;&gt;IARPA website for the ALADDIN program&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
@@ -36,7 +56,27 @@
       <pubDate>Thu, 10 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>https://adalisan.github.io/publication/fidcommjofc/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
+      <description>&lt;p&gt;Let&amp;rsquo;s say our data does not consist of $n$ observations of $d$-dimensional vectors, but instead an $n \times n$ matrix, whose entries consist of the dissimilarities between the $n$ observations as measured by a bivariate function $\delta(.,.)$.  We refer to the computation of $n$ separate $d$-dimensional vectors/points  that is as consistent as possible with a dissimilarity matrices as &amp;ldquo;embedding&amp;rdquo; this dissimilarity matrix.&lt;/p&gt;
+
+&lt;p&gt;Consider the embedding of $K$   dissimilarity(distance-like) matrices between $n$ objects (coming from $K$ different bivariate functions  $\delta_k(.,.)$ ) or observations of $n$  $K-tuples$ of similar objects. In any case the different dissimilarity matrices are related in a statistical or causal sense. We refer to this relation as &amp;ldquo;matched&amp;rdquo;. Say $K=2$. A joint  embedding of these dissimilarity matrices will result in $2n$ points that consist of $n$ matched points.&lt;/p&gt;
+
+&lt;p&gt;To embed multiple dissimilarities  ${\Delta_k},k=1,2$  into a commensurate space, so that the information represented in different dissimality matrices can be used for a data exploitation task,  an omnibus dissimilarity matrix  $M \in \mathbb{R}^{nk \times nk}$  is constructed. Consider, for $K=2$,
+$$
+M=  \left[ \begin{array}{cc}
+         \Delta_1 &amp;amp; L&lt;br /&gt;
+        L^T  &amp;amp; \Delta_2
+     \end{array}  \right]     \label{omnibus}
+$$ where $L$ is an imputed or estimated matrix for the two dissimilarities between $n$ objects. The embedding of this matrix will result in $2n$ observations of $d$-dimensional vectors.&lt;/p&gt;
+
+&lt;p&gt;If we minimize a common multidimensional scaling objective function known as raw stress to embed, the objective function can be decomposed into three terms that are interpretable.
+Fidelity describes how well the embedding in commensurate space preserves the original dissimilarities ${\Delta_k},k=1,2$. These terms would be the only ones that are minimized   if we embedded the dissimilarity matrices separately.&lt;/p&gt;
+
+&lt;p&gt;Commensurability is how well the embedding  in commensurate space preserves matchedness of matched observations. These terms correspond to the deviation from the real dissimilarities between matched observations and the distances between matched points in the embedding.&lt;/p&gt;
+
+&lt;p&gt;Separability is how well the embedding  in commensurate space preserves the disparateness of unmatched observations.
+These terms correspond to the deviation from the real dissimilarities between unmatched observations and the distances between unmatched points in the embedding.&lt;/p&gt;
+
+&lt;p&gt;We show that a weight parameter that controls the terms&amp;rsquo; importance in the minimization of raw stress is essential for data exploitation task such as detection of new matched observations, given a set of  matched observations.&lt;/p&gt;
 </description>
     </item>
     
@@ -51,13 +91,12 @@
     </item>
     
     <item>
-      <title>Seeded Graph Matching</title>
-      <link>https://adalisan.github.io/publication/sgm/</link>
+      <title>Learning spatiotemporal features for infrared action recognition with 3d convolutional neural networks</title>
+      <link>https://adalisan.github.io/publication/infracv/</link>
       <pubDate>Thu, 10 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://adalisan.github.io/publication/sgm/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <guid>https://adalisan.github.io/publication/infracv/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -66,8 +105,7 @@
       <pubDate>Thu, 10 Nov 2016 00:00:00 +0000</pubDate>
       
       <guid>https://adalisan.github.io/publication/sgmviajofc/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <description></description>
     </item>
     
     <item>
@@ -113,6 +151,21 @@ My work on this variant of the graph matching problem constituted part of my dis
       <description>
 
 &lt;h4 id=&#34;darpa-program-for-organizing-big-data-analysis-and-visualization-efforts&#34;&gt;DARPA program for organizing big data analysis and visualization efforts.&lt;/h4&gt;
+
+&lt;p&gt;The different data analysis tasks we accomplished are &lt;a href=&#34;http://www.cis.jhu.edu/~parky/XDATA/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;See the &lt;a href=&#34;https://docs.google.com/presentation/d/1PjKrZE0zIsT6egd2p4jNx7XvaOxjYDkB_OP8tSZI6LY/pub?start=false&amp;amp;loop=false&amp;amp;delayms=5000&#34; target=&#34;_blank&#34;&gt;midpoint presentation&lt;/a&gt;
+and &lt;a href=&#34;xdata_ppt1/XDATA-Midpoint.html&#34; target=&#34;_blank&#34;&gt;final presentation&lt;/a&gt; for the summer workshop.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Migration</title>
+      <link>https://adalisan.github.io/post/migrating-to-hugo/</link>
+      <pubDate>Wed, 20 Apr 2016 10:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/post/migrating-to-hugo/</guid>
+      <description>&lt;p&gt;I have decided to switch to the academic theme for hugo , as it makes much more sense for a researcher. Now I just need to collect all the things I have done over the years.&lt;/p&gt;
 </description>
     </item>
     
@@ -122,7 +175,9 @@ My work on this variant of the graph matching problem constituted part of my dis
       <pubDate>Wed, 20 Apr 2016 10:00:00 +0000</pubDate>
       
       <guid>https://adalisan.github.io/post/writing-markdown-latex/</guid>
-      <description>&lt;p&gt;Content can be written using &lt;a href=&#34;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&#34; target=&#34;_blank&#34;&gt;Markdown&lt;/a&gt;, &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34; target=&#34;_blank&#34;&gt;LaTeX math&lt;/a&gt;, and &lt;a href=&#34;http://gohugo.io/extras/shortcodes/&#34; target=&#34;_blank&#34;&gt;Hugo Shortcodes&lt;/a&gt;. Additionally, HTML may be used for advanced formatting. This article gives an overview of the most common formatting options.&lt;/p&gt;
+      <description>&lt;p&gt;Content can be written using &lt;a href=&#34;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&#34; target=&#34;_blank&#34;&gt;Markdown&lt;/a&gt;, &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34; target=&#34;_blank&#34;&gt;LaTeX math&lt;/a&gt;, and &lt;a href=&#34;http://gohugo.io/extras/shortcodes/&#34; target=&#34;_blank&#34;&gt;Hugo Shortcodes&lt;/a&gt;. Additionally, HTML may be used for advanced formatting.&lt;/p&gt;
+
+&lt;p&gt;This article gives an overview of the most common formatting options.&lt;/p&gt;
 
 &lt;h2 id=&#34;sub-headings&#34;&gt;Sub-headings&lt;/h2&gt;
 
@@ -204,7 +259,7 @@ Strikethrough with ~~two tildes~~.
 [^1]: Footnote example.
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;I have more &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a rel=&#34;footnote&#34; href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; to say.&lt;/p&gt;
+&lt;p&gt;I have more &lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; to say.&lt;/p&gt;
 
 &lt;h2 id=&#34;code-highlighting&#34;&gt;Code highlighting&lt;/h2&gt;
 
@@ -324,7 +379,7 @@ print(&amp;quot;You entered: {}&amp;quot;.format(input_string_var))
 
 &lt;p&gt;If the &lt;code&gt;highlight_languages&lt;/code&gt; option is set, then the corresponding javascript files will be served from the &lt;a href=&#34;https://cdnjs.com/libraries/highlight.js/&#34; target=&#34;_blank&#34;&gt;cdnjs server&lt;/a&gt;. To see a list of available languages, visit the &lt;a href=&#34;https://cdnjs.com/libraries/highlight.js/&#34; target=&#34;_blank&#34;&gt;cdnjs page&lt;/a&gt; and search for links with the word &amp;ldquo;languages&amp;rdquo;.&lt;/p&gt;
 
-&lt;p&gt;The &lt;code&gt;highlight_languages&lt;/code&gt; option provides an easy and convenient way to include support for additional languages to be severed from a CDN. If serving unmodified files from cdnjs doesn&amp;rsquo;t meet your needs, you can include javascript files for additional language support via one of the methods described in the &lt;a href=&#34;&#34; target=&#34;_blank&#34;&gt;getting started guide&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;highlight_languages&lt;/code&gt; option provides an easy and convenient way to include support for additional languages to be severed from a CDN. If serving unmodified files from cdnjs doesn&amp;rsquo;t meet your needs, you can include javascript files for additional language support via one of the methods described in the getting started guide.&lt;/p&gt;
 
 &lt;h4 id=&#34;option-highlight-style&#34;&gt;Option &lt;code&gt;highlight_style&lt;/code&gt;&lt;/h4&gt;
 
@@ -336,17 +391,12 @@ print(&amp;quot;You entered: {}&amp;quot;.format(input_string_var))
 
 &lt;p&gt;See the &lt;a href=&#34;https://highlightjs.org/static/demo/&#34; target=&#34;_blank&#34;&gt;highlight.js demo page&lt;/a&gt; for examples of available styles.&lt;/p&gt;
 
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;p&gt;Not all styles listed on the &lt;a href=&#34;https://highlightjs.org/static/demo/&#34; target=&#34;_blank&#34;&gt;highlight.js demo page&lt;/a&gt; are available from the &lt;a href=&#34;https://cdnjs.com/libraries/highlight.js/&#34; target=&#34;_blank&#34;&gt;cdnjs server&lt;/a&gt;. If you want to use a style that is not served by cdnjs, just leave &lt;code&gt;highlight_style&lt;/code&gt; unset, and place the corresponding css file in &lt;code&gt;/static/css/highlight.min.css&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Missing alert
+Not all styles listed on the &lt;a href=&#34;https://highlightjs.org/static/demo/&#34; target=&#34;_blank&#34;&gt;highlight.js demo page&lt;/a&gt; are available from the &lt;a href=&#34;https://cdnjs.com/libraries/highlight.js/&#34; target=&#34;_blank&#34;&gt;cdnjs server&lt;/a&gt;. If you want to use a style that is not served by cdnjs, just leave &lt;code&gt;highlight_style&lt;/code&gt; unset, and place the corresponding css file in &lt;code&gt;/static/css/highlight.min.css&lt;/code&gt;.
+Missing &lt;strong&gt;alert&lt;/strong&gt;&lt;/p&gt;
 
-&lt;/div&gt;
-
-
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;p&gt;If you don&amp;rsquo;t want to change the default style that ships with Academic but you do want the style file served from the &lt;a href=&#34;https://cdnjs.com/libraries/highlight.js/&#34; target=&#34;_blank&#34;&gt;cdnjs server&lt;/a&gt;, set &lt;code&gt;highlight_style = &amp;quot;github&amp;quot;&lt;/code&gt; in &lt;code&gt;config.toml&lt;/code&gt;.&lt;/p&gt;
-
-&lt;/div&gt;
-
+&lt;p&gt;If you don&amp;rsquo;t want to change the default style that ships with Academic but you do want the style file served from the &lt;a href=&#34;https://cdnjs.com/libraries/highlight.js/&#34; target=&#34;_blank&#34;&gt;cdnjs server&lt;/a&gt;, set &lt;code&gt;highlight_style = &amp;quot;github&amp;quot;&lt;/code&gt; in &lt;code&gt;config.toml&lt;/code&gt;.
+Missing &lt;strong&gt;alertend&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;The &lt;code&gt;highlight_style&lt;/code&gt; option is only recognized when set in &lt;code&gt;config.toml&lt;/code&gt;. Setting &lt;code&gt;highlight_style&lt;/code&gt; in your page&amp;rsquo;s preamble has no effect.&lt;/p&gt;
 
@@ -430,33 +480,14 @@ print(&amp;quot;You entered: {}&amp;quot;.format(input_string_var))
 
 &lt;h2 id=&#34;alerts&#34;&gt;Alerts&lt;/h2&gt;
 
-&lt;p&gt;Alerts are a useful feature that add side content such as tips, notes, or warnings to your articles. They are especially handy when writing educational tutorial-style articles. Use the corresponding shortcodes to enable alerts inside your content:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;{{% alert note %}}
-Here&#39;s a tip or note...
-{{% /alert %}}
-&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Alerts are a useful feature that add side content such as tips, notes, or warnings to your articles. They are especially handy when writing educational tutorial-style articles. Use the corresponding shortcodes to enable alerts inside your content.
+Missing &lt;em&gt;alert&lt;/em&gt; templates:&lt;/p&gt;
 
 &lt;p&gt;This will display the following &lt;em&gt;note&lt;/em&gt; block:&lt;/p&gt;
 
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;p&gt;Here&amp;rsquo;s a tip or note&amp;hellip;&lt;/p&gt;
-
-&lt;/div&gt;
-
-
-&lt;pre&gt;&lt;code&gt;{{% alert warning %}}
-Here&#39;s some important information...
-{{% /alert %}}
-&lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;This will display the following &lt;em&gt;warning&lt;/em&gt; block:&lt;/p&gt;
 
-&lt;div class=&#34;alert alert-warning&#34;&gt;
-  &lt;p&gt;Here&amp;rsquo;s some important information&amp;hellip;&lt;/p&gt;
-
-&lt;/div&gt;
-
+&lt;p&gt;Here&amp;rsquo;s some important information&amp;hellip;&lt;/p&gt;
 &lt;div class=&#34;footnotes&#34;&gt;
 
 &lt;hr /&gt;
@@ -474,39 +505,7 @@ Here&#39;s some important information...
       <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
       
       <guid>https://adalisan.github.io/publication/manmatch-jofc/</guid>
-      <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>First post</title>
-      <link>https://adalisan.github.io/2014/08/12/first-post/</link>
-      <pubDate>Tue, 12 Aug 2014 19:55:16 +0000</pubDate>
-      
-      <guid>https://adalisan.github.io/2014/08/12/first-post/</guid>
-      <description>&lt;p&gt;I am in the process of creating my new personal website. I wanted to make it simple and based on a simple  design with the option to generate pages without messing with HTML. That is why I am using Herring Cove. This &lt;strong&gt;may&lt;/strong&gt;
-be overkill for a personal website.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Joint Optimization of Fidelity and Commensurability for Manifold Alignment and Vertex Assignment</title>
-      <link>https://adalisan.github.io/talk/worldcongprobstat/</link>
-      <pubDate>Wed, 01 Aug 2012 00:00:00 +0000</pubDate>
-      
-      <guid>https://adalisan.github.io/talk/worldcongprobstat/</guid>
-      <description>&lt;p&gt;Embed your slides or video here using &lt;a href=&#34;https://gcushen.github.io/hugo-academic-demo/post/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;shortcodes&lt;/a&gt;. Further details can easily be added using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Joint Optimization of Fidelity and Commensurability for Manifold Alignment and Vertex Assignment</title>
-      <link>https://adalisan.github.io/talk/jsm2012/</link>
-      <pubDate>Mon, 01 Aug 2011 00:00:00 +0000</pubDate>
-      
-      <guid>https://adalisan.github.io/talk/jsm2012/</guid>
-      <description>&lt;p&gt;Embed your slides or video here using &lt;a href=&#34;https://gcushen.github.io/hugo-academic-demo/post/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;shortcodes&lt;/a&gt;. Further details can easily be added using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
+      <description></description>
     </item>
     
   </channel>

@@ -8,7 +8,107 @@
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Sancar Adali</copyright>
     <lastBuildDate>Wed, 20 Apr 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="/home/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://adalisan.github.io/home/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title></title>
+      <link>https://adalisan.github.io/home/about/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/home/about/</guid>
+      <description>Biography My resume
+I am a machine learning researcher at Raytheon BBN Technologies. I have worked on computer vision, bioinformatics and statistical analysis problems. I am interested in different approaches to learning from disparate modalities of data collected from different sensors. I am also interested in applications of data fusion to graphs and in general, learning from graph data.
+I have a PhD in Applied Mathematics and Statistics from Johns Hopkins University.</description>
+    </item>
+    
+    <item>
+      <title>Selected Publications</title>
+      <link>https://adalisan.github.io/home/publications_selected/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/home/publications_selected/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recent Publications</title>
+      <link>https://adalisan.github.io/home/publications/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/home/publications/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software</title>
+      <link>https://adalisan.github.io/home/software/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/home/software/</guid>
+      <description>RGraphM is a graph matching R package based on [graphm]http://cbio.mines-paristech.fr/graphm/. Coming soon to CRAN.</description>
+    </item>
+    
+    <item>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>https://adalisan.github.io/home/talks/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/home/talks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Recent Posts</title>
+      <link>https://adalisan.github.io/home/posts/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/home/posts/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Links</title>
+      <link>https://adalisan.github.io/home/links/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/home/links/</guid>
+      <description>R and development Advanced R development - GitHub How to improve your R and data analysis skills by doing, asking for help and learning from online sources R, Statet/Eclipse and Latex primer R package for managing data projects
+Statet- an Eclipse plugin for R
+Introduction to R
+Robust workflow with StatET + Eclipse (+ SVN + LaTeX + Sweave + BibTeX + Zotero)
+R examples: usage of different libraries</description>
+    </item>
+    
+    <item>
+      <title>Projects</title>
+      <link>https://adalisan.github.io/home/projects/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/home/projects/</guid>
+      <description>Some of the things I have worked on.</description>
+    </item>
+    
+    <item>
+      <title>Teaching</title>
+      <link>https://adalisan.github.io/home/teaching/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/home/teaching/</guid>
+      <description>I taught an intersession course on R programming at Johns Hopkins. Here are my class notes:
+Let’s first start Rstudio. This is a good GUI that helps you organize the R expressions(functions called with some arguments) you run, the plots and outputs as a result of those commands.
+We have four panes. The upper left is the R script file editor, where you will enter your commands and save them as a text file.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://adalisan.github.io/home/contact/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://adalisan.github.io/home/contact/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
