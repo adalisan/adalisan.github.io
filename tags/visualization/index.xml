@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Visualization on Sancar Adali - personal website</title>
+    <title>visualization on Sancar Adali - personal website</title>
     <link>https://adalisan.github.io/tags/visualization/</link>
-    <description>Recent content in Visualization on Sancar Adali - personal website</description>
+    <description>Recent content in visualization on Sancar Adali - personal website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Sancar Adali</copyright>
     <lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
-    
+
 	<atom:link href="https://adalisan.github.io/tags/visualization/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+
+
     <item>
       <title>XDATA</title>
       <link>https://adalisan.github.io/project/xdata/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
+
       <guid>https://adalisan.github.io/project/xdata/</guid>
       <description>DARPA program for organizing big data analysis and visualization efforts. The different data analysis tasks we accomplished are here.
 See the midpoint presentation and final presentation for the summer workshop.</description>
     </item>
-    
+
   </channel>
 </rss>

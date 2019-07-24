@@ -8,55 +8,64 @@
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Sancar Adali</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    
+
 	<atom:link href="https://adalisan.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+
+
+    <item>
+      <title>Seeded Graph Matching</title>
+      <link>https://adalisan.github.io/publication/sgm/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+
+      <guid>https://adalisan.github.io/publication/sgm/</guid>
+      <description></description>
+    </item>
+
     <item>
       <title>Fidelity-Commensurability Tradeoff in Joint Embedding of Disparate Dissimilarities</title>
       <link>https://adalisan.github.io/publication/fidcommjofc/</link>
       <pubDate>Thu, 10 Nov 2016 00:00:00 +0000</pubDate>
-      
+
       <guid>https://adalisan.github.io/publication/fidcommjofc/</guid>
       <description>Let&amp;rsquo;s say our data does not consist of $n$ observations of $d$-dimensional vectors, but instead an $n \times n$ matrix, whose entries consist of the dissimilarities between the $n$ observations as measured by a bivariate function $\delta(.,.)$. We refer to the computation of $n$ separate $d$-dimensional vectors/points that is as consistent as possible with a dissimilarity matrices as &amp;ldquo;embedding&amp;rdquo; this dissimilarity matrix.
 Consider the embedding of $K$ dissimilarity(distance-like) matrices between $n$ objects (coming from $K$ different bivariate functions $\delta_k(.</description>
     </item>
-    
+
     <item>
       <title>Joint Optimization of Fidelity and Commensurability for Manifold Alignment and Graph Matching</title>
       <link>https://adalisan.github.io/publication/thesis/</link>
       <pubDate>Thu, 10 Nov 2016 00:00:00 +0000</pubDate>
-      
+
       <guid>https://adalisan.github.io/publication/thesis/</guid>
       <description>More detail can easily be written here using Markdown and $\rm \LaTeX$ math code.</description>
     </item>
-    
+
     <item>
       <title>Learning spatiotemporal features for infrared action recognition with 3d convolutional neural networks</title>
       <link>https://adalisan.github.io/publication/infracv/</link>
       <pubDate>Thu, 10 Nov 2016 00:00:00 +0000</pubDate>
-      
+
       <guid>https://adalisan.github.io/publication/infracv/</guid>
       <description></description>
     </item>
-    
+
     <item>
       <title>Seeded Graph Matching Via Joint Optimization of Fidelity and Commensurability</title>
       <link>https://adalisan.github.io/publication/sgmviajofc/</link>
       <pubDate>Thu, 10 Nov 2016 00:00:00 +0000</pubDate>
-      
+
       <guid>https://adalisan.github.io/publication/sgmviajofc/</guid>
       <description></description>
     </item>
-    
+
     <item>
       <title>Manifold matching: Joint optimization of fidelity and commensurability</title>
       <link>https://adalisan.github.io/publication/manmatch-jofc/</link>
       <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      
+
       <guid>https://adalisan.github.io/publication/manmatch-jofc/</guid>
       <description></description>
     </item>
-    
+
   </channel>
 </rss>

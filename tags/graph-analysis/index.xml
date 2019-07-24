@@ -1,36 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Graph Analysis on Sancar Adali - personal website</title>
+    <title>graph-analysis on Sancar Adali - personal website</title>
     <link>https://adalisan.github.io/tags/graph-analysis/</link>
-    <description>Recent content in Graph Analysis on Sancar Adali - personal website</description>
+    <description>Recent content in graph-analysis on Sancar Adali - personal website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Sancar Adali</copyright>
     <lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
-    
+
 	<atom:link href="https://adalisan.github.io/tags/graph-analysis/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+
+
     <item>
       <title>Seeded Graph Matching</title>
       <link>https://adalisan.github.io/project/sgm/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
+
       <guid>https://adalisan.github.io/project/sgm/</guid>
-      <description>This variant of the graph matching problem provides an opportunity for the application of JOFC and also the adaptation of a state-of-the-art graph matching algorithm. My work on this variant of the graph matching problem constituted part of my dissertation research. This work is presented in this and this arxiv papers.
-The code for the algorithm and analysis is at https://github.com/adalisan/SeededGraphMatch</description>
+      <description>The other portion of my disseration project.</description>
     </item>
-    
+
     <item>
       <title>XDATA</title>
       <link>https://adalisan.github.io/project/xdata/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      
+
       <guid>https://adalisan.github.io/project/xdata/</guid>
-      <description>DARPA program for organizing big data analysis and visualization efforts. The different data analysis tasks we accomplished are here.
-See the midpoint presentation and final presentation for the summer workshop.</description>
+      <description>DARPA program for organizing big data analysis and visualization efforts.</description>
     </item>
-    
+
   </channel>
 </rss>

@@ -8,54 +8,54 @@
     <language>en-us</language>
     <copyright>&amp;copy; 2016 Sancar Adali</copyright>
     <lastBuildDate>Sun, 01 Jan 2017 00:00:00 +0000</lastBuildDate>
-    
+
 	<atom:link href="https://adalisan.github.io/post/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+
+
     <item>
       <title>graph matching and spaces</title>
       <link>https://adalisan.github.io/post/graph-matching-and-spaces/</link>
       <pubDate>Thu, 26 Jul 2018 21:06:09 -0400</pubDate>
-      
+
       <guid>https://adalisan.github.io/post/graph-matching-and-spaces/</guid>
       <description>Part of my dissertation research was on the graph matching problem. For solving this problem in real settings, it is useful to think of vertices as elements of a space with the edges determining some sort of locality, (I guess this can be formalized with topology ). Then the graph/vertex matching problem becomes sort of a point cloud matching problem where you don&amp;rsquo;t know where the points are , just the neighborhood relationships between them ( several manifold learning uses these relationships to find the manifolds defined by the points ).</description>
     </item>
-    
+
     <item>
       <title>Migration</title>
       <link>https://adalisan.github.io/post/migrating-to-hugo/</link>
       <pubDate>Wed, 20 Apr 2016 10:00:00 +0000</pubDate>
-      
+
       <guid>https://adalisan.github.io/post/migrating-to-hugo/</guid>
       <description>I have decided to switch to the academic theme for hugo , as it makes much more sense for a researcher. Now I just need to collect all the things I have done over the years.</description>
     </item>
-    
+
     <item>
       <title>Writing content with Markdown, LaTeX, and Shortcodes</title>
       <link>https://adalisan.github.io/post/writing-markdown-latex/</link>
       <pubDate>Wed, 20 Apr 2016 10:00:00 +0000</pubDate>
-      
+
       <guid>https://adalisan.github.io/post/writing-markdown-latex/</guid>
-      <description>&lt;p&gt;Content can be written using &lt;a href=&#34;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&#34; target=&#34;_blank&#34;&gt;Markdown&lt;/a&gt;, &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34; target=&#34;_blank&#34;&gt;LaTeX math&lt;/a&gt;, and &lt;a href=&#34;http://gohugo.io/extras/shortcodes/&#34; target=&#34;_blank&#34;&gt;Hugo Shortcodes&lt;/a&gt;. Additionally, HTML may be used for advanced formatting. This article gives an overview of the most common formatting options.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Content can be written using &lt;a href=&#34;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&#34; target=&#34;_blank&#34;&gt;Markdown&lt;/a&gt;, &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34; target=&#34;_blank&#34;&gt;LaTeX math&lt;/a&gt;, and &lt;a href=&#34;http://gohugo.io/extras/shortcodes/&#34; target=&#34;_blank&#34;&gt;Hugo Shortcodes&lt;/a&gt;. Additionally, HTML may be used for advanced formatting.&lt;/p&gt;</description>
     </item>
-    
+
     <item>
       <title>Building  R package from C codebase</title>
       <link>https://adalisan.github.io/post/building_r_package/</link>
       <pubDate>Tue, 12 Aug 2014 19:55:16 +0000</pubDate>
-      
+
       <guid>https://adalisan.github.io/post/building_r_package/</guid>
       <description>I have been trying to build an R package that uses C code. I was not fast enough to get a working build for some time as it is a wrapper package around an existing C library and I wanted to submit to CRAN eventually, so I needed to get a linux and windows (32 and 64-bit) builds working correctly. Building an R package even with native R code is not easy.</description>
     </item>
-    
+
     <item>
       <title>First post</title>
       <link>https://adalisan.github.io/post/2014-08-12-first-post/</link>
       <pubDate>Tue, 12 Aug 2014 19:55:16 +0000</pubDate>
-      
+
       <guid>https://adalisan.github.io/post/2014-08-12-first-post/</guid>
       <description>I am in the process of creating my new personal website. I wanted to make it simple and based on a simple design with the option to generate pages without messing with HTML. That is why I am using Herring Cove. This may be overkill for a personal website.</description>
     </item>
-    
+
   </channel>
 </rss>
